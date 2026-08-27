@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.DS_Store
+*.log
+.env
+.env.local
+/assets
+/apple-icon.png
+/favicon.ico
+/icon.png
+/og.png
+
