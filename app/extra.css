@@ -783,4 +783,141 @@ body {
   border-color: #1d74f2;
 }
 
+html,
+body,
+.v2-root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+.wistia-vsl {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: min(58vw, 380px);
+  background: #0b0d10;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.founder-photo {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  position: static !important;
+  inset: auto !important;
+}
+
+.founder-photo {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-word {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.wistia-vsl wistia-player {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  box-sizing: border-box;
+}
+
+.v2-btn-primary {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .container-page {
+    padding-inline: 12px;
+  }
+
+  .v2-nav {
+    top: 10px;
+    width: calc(100% - 16px);
+    gap: 10px;
+    padding: 8px 8px 8px 12px;
+  }
+
+  .v2-root main {
+    padding-top: 76px;
+  }
+
+  .v2-section {
+    padding-block: 56px;
+  }
+
+  .v2-h1 {
+    font-size: clamp(24px, 7.2vw, 34px);
+  }
+
+  .v2-btn-primary {
+    width: 100%;
+    padding: 15px 22px;
+  }
+
+  .v2-btn-primary--sm {
+    width: auto;
+    padding: 10px 16px;
+  }
+
+  .book-grid {
+    gap: 4px;
+  }
+
+  .book-day {
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .book-widget-head,
+  .book-cal,
+  .book-slots {
+    padding: 14px;
+  }
+
+  .toast {
+    left: 12px;
+    right: 12px;
+    transform: none;
+    width: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-word {
+    font-size: 15px !important;
+  }
+}
+
 

@@ -23,7 +23,7 @@ export function useSiteEffects() {
     }
 
     function revealOnScroll() {
-      const nodes = $$(".v2-rise");
+      const nodes = $$(".v2-rise, .reveal");
       if (!nodes.length) return;
       if (reduced || !("IntersectionObserver" in window)) {
         nodes.forEach((n) => n.classList.add("is-visible"));

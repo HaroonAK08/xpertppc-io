@@ -1,18 +1,18 @@
 export default function BrandLogo({ size = "nav" }) {
-  const mark = size === "footer" ? 36 : 32;
+  const mark = size === "footer" ? 40 : 34;
   const text = size === "footer" ? 20 : 17;
   return (
     <span className="inline-flex items-center gap-2.5">
       <img
-        src="/assets/xpertppc-mark.png"
+        src="/assets/xpertppc-icon.png"
         alt=""
         width={mark}
         height={mark}
-        className="rounded-[9px] shrink-0"
+        className="shrink-0 rounded-full object-cover"
         style={{ width: mark, height: mark }}
       />
       <span
-        className="font-extrabold tracking-tight leading-none"
+        className="logo-word font-extrabold tracking-tight leading-none"
         style={{ fontFamily: "var(--font-heading)", fontSize: text }}
       >
         <span style={{ color: "#1D74F2" }}>XPERT</span>
