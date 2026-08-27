@@ -2,7 +2,6 @@ import "./tailwind.css";
 import "./v2.css";
 import "./extra.css";
 import { PT_Serif, Instrument_Serif, Montserrat, Plus_Jakarta_Sans, Caveat } from "next/font/google";
-import Script from "next/script";
 
 const ptSerif = PT_Serif({
   subsets: ["latin"],
@@ -52,10 +51,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${ptSerif.variable} ${instrument.variable} ${montserrat.variable} ${jakarta.variable} ${caveat.variable}`}
     >
-      <body>
-        {children}
-        <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
