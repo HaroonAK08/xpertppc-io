@@ -1,0 +1,1047 @@
+{
+  "url": "/marketing-agency-in-orange-county",
+  "scrollHeight": 17247,
+  "max": "1344px",
+  "side": "6vh",
+  "sections": [
+    {
+      "tag": "header",
+      "id": null,
+      "class": "site-header",
+      "section": "site-header",
+      "text": "emarketing experts performance marketing agency 01 Home Sweet Home 02 Expertise ",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 108
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "sticky",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 0
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "exp-hero promo-hero",
+      "section": "hero",
+      "text": "June Special: Start for Free Get more customers for your business with paid ads",
+      "box": {
+        "x": 0,
+        "y": 108,
+        "w": 1440,
+        "h": 727.7
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgb(255, 255, 255)",
+        "padding": "216px 0px 90px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 1
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "exp-cap promo-bullets",
+      "section": "offer",
+      "text": "01. Start for free in June with a signed 3 month contract starting July 1, 2026",
+      "box": {
+        "x": 0,
+        "y": 835.7,
+        "w": 1440,
+        "h": 542.3
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(136, 136, 137, 0.063)",
+        "padding": "0px 0px 90px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 2
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-sections wrap",
+      "section": "mid-cta-1",
+      "text": "Ready to drive revenue? Book an intro. 949.322.0387 Call 949.322.0387 Book Int",
+      "box": {
+        "x": 54,
+        "y": 1378,
+        "w": 1332,
+        "h": 507.4
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "90px 0px",
+        "margin": "0px 54px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 3
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-partner-strip",
+      "section": "partners",
+      "text": "",
+      "box": {
+        "x": 0,
+        "y": 1885.4,
+        "w": 1440,
+        "h": 156
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgb(16, 16, 20)",
+        "padding": "54px 0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 4
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-band-section",
+      "section": "band",
+      "text": "Drive more leads, customers + revenue to your business.",
+      "box": {
+        "x": 0,
+        "y": 2091.4,
+        "w": 1440,
+        "h": 1064.6
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 50px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 5
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-band-section",
+      "section": "band",
+      "text": "Our agency has experience spending millions on social media.",
+      "box": {
+        "x": 0,
+        "y": 3206,
+        "w": 1440,
+        "h": 1064.6
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 50px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 6
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-band-section",
+      "section": "band",
+      "text": "Our agency has driven in thousands of qualified new customer calls.",
+      "box": {
+        "x": 0,
+        "y": 4320.6,
+        "w": 1440,
+        "h": 1064.6
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 50px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 7
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-sections wrap",
+      "section": "mid-cta-2",
+      "text": "Ready to drive revenue? Book an intro. 949.322.0387 Call 949.322.0387 Book Int",
+      "box": {
+        "x": 54,
+        "y": 5435.2,
+        "w": 1332,
+        "h": 507.4
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "90px 0px",
+        "margin": "0px 54px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 8
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-sections wrap",
+      "section": "clients-videos",
+      "text": "Testimonials Hear from real Clients. Call now 949.322.0387 Book Intro →",
+      "box": {
+        "x": 54,
+        "y": 5942.6,
+        "w": 1332,
+        "h": 8296.9
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "90px 0px",
+        "margin": "0px 54px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 9
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-sections wrap",
+      "section": "humble-brag",
+      "text": "Humble Brag. Case Study: We drove in 500,000 attendees in 10 weeks to the fair.",
+      "box": {
+        "x": 54,
+        "y": 14239.5,
+        "w": 1332,
+        "h": 1252.5
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "90px 0px",
+        "margin": "0px 54px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 10
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-clients",
+      "section": "clients",
+      "text": "experience on over 100 brands Our Clients",
+      "box": {
+        "x": 0,
+        "y": 15492,
+        "w": 1440,
+        "h": 567.4
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(16, 16, 20)",
+        "padding": "90px 0px 108px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 11
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "promo-finale wrap",
+      "section": "finale-cta",
+      "text": "We can help generate revenue for your business. Call 949.322.0387 and get starte",
+      "box": {
+        "x": 54,
+        "y": 16059.5,
+        "w": 1332,
+        "h": 466.4
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "90px 0px",
+        "margin": "0px 54px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 12
+    },
+    {
+      "tag": "section",
+      "id": null,
+      "class": "collab case-collab",
+      "section": "cta",
+      "text": "EMARKETING EXPERTS Ready to drive revenue? Book an intro. Book Intro →",
+      "box": {
+        "x": 0,
+        "y": 16525.8,
+        "w": 1440,
+        "h": 337.8
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(16, 16, 20)",
+        "padding": "90px 0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 13
+    },
+    {
+      "tag": "footer",
+      "id": null,
+      "class": "footer",
+      "section": "footer",
+      "text": "Insta emarketing experts performance marketing agency Newport Beach eMarketing",
+      "box": {
+        "x": 0,
+        "y": 16863.6,
+        "w": 1440,
+        "h": 383.4
+      },
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": "16.4px",
+        "fontWeight": "400",
+        "lineHeight": "26.24px",
+        "letterSpacing": "normal",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(136, 136, 137, 0.063)",
+        "padding": "90px 0px 0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "relative",
+        "maxWidth": "none",
+        "width": "1440px",
+        "gap": "normal",
+        "opacity": "1"
+      },
+      "index": 14
+    }
+  ],
+  "headers": [
+    {
+      "tag": "h1",
+      "id": null,
+      "class": "exp-title",
+      "section": null,
+      "text": "Get more customers for your business with paid ads.",
+      "box": {
+        "x": 54,
+        "y": 347.6,
+        "w": 799.2,
+        "h": 137.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "799.188px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title-md",
+      "section": null,
+      "text": "Ready to drive revenue? Book an intro.",
+      "box": {
+        "x": 54,
+        "y": 1504,
+        "w": 413.6,
+        "h": 155.4
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "49.36px",
+        "fontWeight": "600",
+        "lineHeight": "51.828px",
+        "letterSpacing": "-1.9744px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 16px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "413.594px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title promo-band-title",
+      "section": null,
+      "text": "Drive more leads, customers + revenue to your business.",
+      "box": {
+        "x": 54,
+        "y": 2091.4,
+        "w": 1038.3,
+        "h": 137.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "50px 0px 27px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1038.28px",
+        "width": "1038.28px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title promo-band-title",
+      "section": null,
+      "text": "Our agency has experience spending millions on social media.",
+      "box": {
+        "x": 54,
+        "y": 3206,
+        "w": 1038.3,
+        "h": 137.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "50px 0px 27px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1038.28px",
+        "width": "1038.28px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title promo-band-title",
+      "section": null,
+      "text": "Our agency has driven in thousands of qualified new customer calls.",
+      "box": {
+        "x": 54,
+        "y": 4320.6,
+        "w": 1038.3,
+        "h": 137.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "50px 0px 27px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1038.28px",
+        "width": "1038.28px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title-md",
+      "section": null,
+      "text": "Ready to drive revenue? Book an intro.",
+      "box": {
+        "x": 54,
+        "y": 5561.2,
+        "w": 413.6,
+        "h": 155.4
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "49.36px",
+        "fontWeight": "600",
+        "lineHeight": "51.828px",
+        "letterSpacing": "-1.9744px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 16px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "413.594px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title",
+      "section": null,
+      "text": "Hear from real Clients.",
+      "box": {
+        "x": 54,
+        "y": 6056.3,
+        "w": 1038.3,
+        "h": 68.8
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 32px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1038.28px",
+        "width": "1038.28px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title",
+      "section": null,
+      "text": "Case Study: We drove in 500,000 attendees in 10 weeks to the fair.",
+      "box": {
+        "x": 54,
+        "y": 14353.2,
+        "w": 1038.3,
+        "h": 137.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 32px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1038.28px",
+        "width": "1038.28px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title-md",
+      "section": null,
+      "text": "Our Clients",
+      "box": {
+        "x": 54,
+        "y": 15605.6,
+        "w": 1332,
+        "h": 51.8
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "49.36px",
+        "fontWeight": "600",
+        "lineHeight": "51.828px",
+        "letterSpacing": "-1.9744px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "1332px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "exp-title",
+      "section": null,
+      "text": "We can help generate revenue for your business. Call 949.322.0387 and get starte",
+      "box": {
+        "x": 54,
+        "y": 16149.5,
+        "w": 1132.7,
+        "h": 206.4
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "68.8px",
+        "fontWeight": "600",
+        "lineHeight": "68.8px",
+        "letterSpacing": "-3.096px",
+        "color": "rgb(17, 16, 19)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 32px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "1132.67px",
+        "width": "1132.66px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "class": "",
+      "section": null,
+      "text": "Ready to drive revenue? Book an intro.",
+      "box": {
+        "x": 54,
+        "y": 16649,
+        "w": 666,
+        "h": 106.6
+      },
+      "style": {
+        "fontFamily": "DM Sans",
+        "fontSize": "49.36px",
+        "fontWeight": "600",
+        "lineHeight": "53.3088px",
+        "letterSpacing": "-1.9744px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px 0px 18px",
+        "display": "block",
+        "position": "static",
+        "maxWidth": "none",
+        "width": "666px",
+        "gap": "normal",
+        "opacity": "1"
+      }
+    }
+  ],
+  "imgs": [
+    {
+      "src": "/images/googleadwordscertified-white-300x169.png",
+      "natW": 300,
+      "natH": 169,
+      "box": {
+        "w": 85.2,
+        "h": 48
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/microsoft-ads.jpg",
+      "natW": 1500,
+      "natH": 859,
+      "box": {
+        "w": 83.8,
+        "h": 48
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/meta-partner.png.webp",
+      "natW": 467,
+      "natH": 200,
+      "box": {
+        "w": 112.1,
+        "h": 48
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/active-campaign-partner-white.png",
+      "natW": 600,
+      "natH": 224,
+      "box": {
+        "w": 128.6,
+        "h": 48
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/boudin-whte.png",
+      "natW": 228,
+      "natH": 208,
+      "box": {
+        "w": 61.4,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/Pacific-Avalon-Logo-white.png",
+      "natW": 585,
+      "natH": 323,
+      "box": {
+        "w": 101.4,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/panasonic-logo.png",
+      "natW": 800,
+      "natH": 189,
+      "box": {
+        "w": 139.9,
+        "h": 33.1
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/berkeleyside-logo-white.png",
+      "natW": 896,
+      "natH": 160,
+      "box": {
+        "w": 140,
+        "h": 25
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/Logo-Long-CHI.png",
+      "natW": 484,
+      "natH": 26,
+      "box": {
+        "w": 139.9,
+        "h": 7.5
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/Sessions-PrimaryLogo_White-2.png",
+      "natW": 1000,
+      "natH": 717,
+      "box": {
+        "w": 78.1,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/sfent-logo-bW-150x150-1.png",
+      "natW": 150,
+      "natH": 150,
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/logo_big.png",
+      "natW": 500,
+      "natH": 197,
+      "box": {
+        "w": 140,
+        "h": 55.2
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/core-1.png",
+      "natW": 829,
+      "natH": 252,
+      "box": {
+        "w": 140,
+        "h": 42.5
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/state-fair-sunday-band-logo.jpeg",
+      "natW": 1000,
+      "natH": 579,
+      "box": {
+        "w": 96.7,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/logo-hummingbird.png",
+      "natW": 1000,
+      "natH": 1000,
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "objectFit": "contain"
+    },
+    {
+      "src": "/images/hs-logo1-1.png",
+      "natW": 400,
+      "natH": 73,
+      "box": {
+        "w": 140,
+        "h": 25.5
+      },
+      "objectFit": "contain"
+    }
+  ],
+  "iframes": [
+    {
+      "src": "https://www.youtube.com/embed/i-JZ8CATjfc",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/7j7ZqKJznik",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/RK5S9q-Qhb8",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/jkZAExWT_kg",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/puGJjihZdz0",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/XD-tqw7b0kA",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/PzX1f5IQuMs",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/W3mfFnodAms",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/Rc4CqIT7uWg",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/HcQSvkepMC4",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    },
+    {
+      "src": "https://www.youtube.com/embed/L5cUjx8acmg",
+      "box": {
+        "w": 1332,
+        "h": 749.3
+      }
+    }
+  ],
+  "title": "Get more customers for your business with paid ads | eMarketing Experts"
+}

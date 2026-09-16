@@ -1,0 +1,104 @@
+[
+  {
+    "id": "home",
+    "origOk": true,
+    "origSize": 64044,
+    "origTitle": "alchemy performance marketing agency – alchemy performance marketing agency",
+    "localOk": true,
+    "localSize": 213838,
+    "localH1": "Drive revenueto your businesswith paid ads."
+  },
+  {
+    "id": "home-services",
+    "origOk": true,
+    "origSize": 213668,
+    "origTitle": "eMarketing Experts — Drive revenue with paid ads",
+    "localOk": true,
+    "localSize": 76207,
+    "localH1": "Driving qualified leads to local services just like you."
+  },
+  {
+    "id": "medical",
+    "origOk": true,
+    "origSize": 59749,
+    "origTitle": "Medical – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/medical\nCall log:\n  - navigating to \"http://127.0.0.1:3002/medical\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "hospitality",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 76938,
+    "localH1": "Driving new guests to hospitality brands just like you."
+  },
+  {
+    "id": "legal",
+    "origOk": true,
+    "origSize": 59686,
+    "origTitle": "Legal – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/legal\nCall log:\n  - navigating to \"http://127.0.0.1:3002/legal\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "sem",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 91124,
+    "localH1": "Helping you win with Google + Microsoft Ads"
+  },
+  {
+    "id": "brand-awareness",
+    "origOk": true,
+    "origSize": 59711,
+    "origTitle": "Brand Awareness – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/brand-awareness\nCall log:\n  - navigating to \"http://127.0.0.1:3002/brand-awareness\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "seo",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 89188,
+    "localH1": "Dominate the Search Engines"
+  },
+  {
+    "id": "brand-films",
+    "origOk": true,
+    "origSize": 59523,
+    "origTitle": "Brand Films – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/brand-films\nCall log:\n  - navigating to \"http://127.0.0.1:3002/brand-films\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "start-free",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 91549,
+    "localH1": "Get more customers for your business with paid ads."
+  },
+  {
+    "id": "book-intro",
+    "origOk": true,
+    "origSize": 64278,
+    "origTitle": "Book Intro – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/book-intro\nCall log:\n  - navigating to \"http://127.0.0.1:3002/book-intro\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "case-fair",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 302836,
+    "localH1": "New LA Fair, 500,000+ Attendees, and Meta Ads"
+  },
+  {
+    "id": "case-yacht",
+    "origOk": true,
+    "origSize": 61635,
+    "origTitle": "Luxury Yacht PPC Case Study – alchemy performance marketing agency",
+    "localError": "page.goto: net::ERR_ABORTED at http://127.0.0.1:3002/luxury-yacht-ppc-case-study\nCall log:\n  - navigating to \"http://127.0.0.1:3002/luxury-yacht-ppc-case-study\", waiting until \"networkidle\"\n"
+  },
+  {
+    "id": "case-plumb",
+    "origError": "page.setContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n  - setting frame content, waiting until \"load\"\n",
+    "localOk": true,
+    "localSize": 138611,
+    "localH1": "Rebranding a Plumbing Company, High CPC, and Google Ads"
+  }
+]

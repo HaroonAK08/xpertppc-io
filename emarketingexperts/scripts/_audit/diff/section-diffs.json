@@ -1,0 +1,132 @@
+[
+  {
+    "id": "01-header",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__01-header.png",
+    "diffPct": 7.17,
+    "local": {
+      "w": 1440,
+      "h": 108
+    },
+    "ref": {
+      "w": 1440,
+      "h": 108
+    }
+  },
+  {
+    "id": "02-hero",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__02-hero.png",
+    "diffPct": 8.96,
+    "local": {
+      "w": 1440,
+      "h": 565
+    },
+    "ref": {
+      "w": 1296,
+      "h": 571
+    }
+  },
+  {
+    "id": "03-capabilities",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__03-capabilities.png",
+    "diffPct": 12.44,
+    "local": {
+      "w": 1440,
+      "h": 871
+    },
+    "ref": {
+      "w": 1440,
+      "h": 900
+    }
+  },
+  {
+    "id": "04-wave",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__04-wave.png",
+    "diffPct": 0.62,
+    "local": {
+      "w": 1440,
+      "h": 630
+    },
+    "ref": {
+      "w": 1440,
+      "h": 630
+    }
+  },
+  {
+    "id": "05-approach",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__05-approach.png",
+    "diffPct": 21.26,
+    "local": {
+      "w": 1300,
+      "h": 529
+    },
+    "ref": {
+      "w": 1188,
+      "h": 585
+    }
+  },
+  {
+    "id": "06-statistics",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__06-statistics.png",
+    "diffPct": 10.16,
+    "local": {
+      "w": 1300,
+      "h": 294
+    },
+    "ref": {
+      "w": 1188,
+      "h": 900
+    }
+  },
+  {
+    "id": "07-how-we-help",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__07-how-we-help.png",
+    "diffPct": 16.31,
+    "local": {
+      "w": 1300,
+      "h": 556
+    },
+    "ref": {
+      "w": 1188,
+      "h": 900
+    }
+  },
+  {
+    "id": "08-finale",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__08-finale.png",
+    "diffPct": 13.97,
+    "local": {
+      "w": 1440,
+      "h": 899
+    },
+    "ref": {
+      "w": 1296,
+      "h": 224
+    }
+  },
+  {
+    "id": "09-cta",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__09-cta.png",
+    "diffPct": 5.44,
+    "local": {
+      "w": 1440,
+      "h": 342
+    },
+    "ref": {
+      "w": 1440,
+      "h": 358
+    }
+  },
+  {
+    "id": "10-footer",
+    "overlay": "/home/haroon/Desktop/Project/WS/emarketingexperts/scripts/_audit/diff/overlay__10-footer.png",
+    "diffPct": 6.42,
+    "local": {
+      "w": 1440,
+      "h": 299
+    },
+    "ref": {
+      "w": 1440,
+      "h": 409
+    }
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "01-header": {
+    "ok": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 108
+    }
+  },
+  "02-hero": {
+    "ok": true,
+    "box": {
+      "x": 72,
+      "y": 0,
+      "width": 1296,
+      "height": 571.53125
+    }
+  },
+  "03-capabilities": {
+    "ok": true,
+    "box": {
+      "x": 0,
+      "y": -0.46875,
+      "width": 1440,
+      "height": 979.609375
+    }
+  },
+  "04-wave": {
+    "ok": true,
+    "box": {
+      "x": 0,
+      "y": 135.140625,
+      "width": 1440,
+      "height": 630
+    }
+  },
+  "05-approach": {
+    "ok": true,
+    "box": {
+      "x": 126,
+      "y": 314.140625,
+      "width": 1188,
+      "height": 585.421875
+    }
+  },
+  "06-statistics": {
+    "ok": true,
+    "box": {
+      "x": 126,
+      "y": -0.4375,
+      "width": 1188,
+      "height": 1058
+    }
+  },
+  "07-how-we-help": {
+    "ok": true,
+    "box": {
+      "x": 126,
+      "y": -99.4375,
+      "width": 1188,
+      "height": 1099.171875
+    }
+  },
+  "08-finale": {
+    "ok": true,
+    "box": {
+      "x": 72,
+      "y": 337.734375,
+      "width": 1296,
+      "height": 224.640625
+    }
+  },
+  "09-cta": {
+    "ok": true,
+    "box": {
+      "x": 0,
+      "y": 271,
+      "width": 1440,
+      "height": 358.640625
+    }
+  },
+  "10-footer": {
+    "ok": true,
+    "box": {
+      "x": 0,
+      "y": 490.640625,
+      "width": 1440,
+      "height": 409
+    }
+  }
+}

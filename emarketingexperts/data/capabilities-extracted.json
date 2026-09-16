@@ -1,0 +1,323 @@
+{
+  "search-engine-marketing": {
+    "slug": "search-engine-marketing",
+    "eyebrow": "Capabilities",
+    "title": "Helping you win with Google + Microsoft Ads",
+    "capLabel": "Capabilities",
+    "capTitle": "Google Ads Local Service Ads Microsoft Ads",
+    "points": [
+      {
+        "num": "01",
+        "title": "Flexible Budgets",
+        "body": [
+          "Adjust your budget and generate leads when you need."
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Transparent Pricing",
+        "body": [
+          "You pay Google with your own credit card.",
+          "Other agencies charge a sneaky 20% ad spend fee. We charge ZERO."
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Flat Rate Fee",
+        "body": [
+          "Creating scalable pricing structures so you pay less."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "Start for Free",
+        "body": [
+          "No long contracts. Start for free with 3 month contract, then month-to-month.",
+          "Plus we give you up to $3500 to start with Google Ads + Microsoft Ads!"
+        ]
+      }
+    ],
+    "tags": [],
+    "approach": {
+      "label": "Approach",
+      "title": "Make the phone ring.",
+      "body": [
+        "It\u2019s actually pretty simple. Our heavily data-driven approach with paid media on the backend shouldn\u2019t cloud the real goal.",
+        "Yes, how we do it is highly technical with bid strategy adjustments (max click, max conversion, value based bidding) PMAX, daily negative keyword optimizations, etc. But we stay grounded in revenue all along the way."
+      ]
+    },
+    "stats": "We've driven thousands of new customer calls from Google and Microsoft.",
+    "howWeHelp": {
+      "label": "How we help.",
+      "services": [
+        "Paid Search",
+        "Websites",
+        "SEO",
+        "Social Media",
+        "Brand Films"
+      ],
+      "body": []
+    },
+    "bottom": "We are your strategic marketing partner for Google and Microsoft in Orange County.",
+    "runBusiness": [
+      {
+        "title": "Get More Traffic",
+        "body": "Employ targeted strategies for driving traffic through paid search, social media, and SEO."
+      },
+      {
+        "title": "Convert More Leads",
+        "body": "Create conversion-based content designed for direct response marketing."
+      },
+      {
+        "title": "Plan for Growth",
+        "body": "Make a game plan built upon transparent reporting and designed to reach milestones. From 1 service van to 50 to 500."
+      }
+    ],
+    "image": "/images/1.png",
+    "partners": [
+      "/images/google-ads-certified.jpg",
+      "/images/microsoft-advertiser-partner.png",
+      "/images/meta-partner.png.webp",
+      "/images/Partner-AC-logo.png",
+      "/images/CR-Agency-Partner-Logo.png"
+    ]
+  },
+  "brand-awareness": {
+    "slug": "brand-awareness",
+    "eyebrow": "Capabilities",
+    "title": "Be found everywhere.",
+    "capLabel": "Capabilities",
+    "capTitle": "Brand Awareness",
+    "points": [
+      {
+        "num": "01",
+        "title": "Tell More People About Your Business",
+        "body": [
+          "Reach potential customers at the lowest CPM."
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Getting Seen Helps Sales",
+        "body": [
+          "Higher brand awareness lowers your CPA later."
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Hundreds of Millions of Impressions",
+        "body": [
+          "Our team of paid media experts has reached literally hundreds of millions of people."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "Unpopular Fact: Brand Awareness Campaigns Drive Brand Awareness,\nNot Sales",
+        "body": [
+          "Brand awareness campaigns are best used in tandem with direct response campaigns, to generate top of the funnel cold-to-warm traffic."
+        ]
+      }
+    ],
+    "tags": [],
+    "approach": {
+      "label": "Approach",
+      "title": "Get 5 Mile Famous.",
+      "body": [
+        "It\u2019s actually pretty simple. Our heavily data-driven approach with paid media has a focus of winning your service area zip code first.",
+        "Yes, we have 7 figure media planning experience and have spent millions in paid social and traditional ads and billboards and more. But we stay grounded in core CPM metrics and connect to revenue all along the way. Helping your business be the lady in red."
+      ]
+    },
+    "stats": "We've spent millions on paid social. Our Managing Partner has even been a speaker for Meta.",
+    "howWeHelp": {
+      "label": "How we help.",
+      "services": [
+        "Paid Search",
+        "Websites",
+        "SEO",
+        "Social Media",
+        "Brand Films"
+      ],
+      "body": []
+    },
+    "bottom": "We are your strategic marketing partner for Meta, Instagram + beyond in OC.",
+    "runBusiness": [
+      {
+        "title": "Get More Traffic",
+        "body": "Employ targeted strategies for driving traffic through paid search, social media, and SEO."
+      },
+      {
+        "title": "Convert More Leads",
+        "body": "Create conversion-based content designed for direct response marketing."
+      },
+      {
+        "title": "Plan for Growth",
+        "body": "Make a game plan built upon transparent reporting and designed to reach milestones. From 1 service van to 50 to 500."
+      }
+    ],
+    "image": "/images/1.png",
+    "partners": [
+      "/images/google-ads-certified.jpg",
+      "/images/microsoft-advertiser-partner.png",
+      "/images/meta-partner.png.webp",
+      "/images/Partner-AC-logo.png",
+      "/images/CR-Agency-Partner-Logo.png"
+    ]
+  },
+  "seo": {
+    "slug": "seo",
+    "eyebrow": "Capabilities",
+    "title": "Dominate the Search Engines",
+    "capLabel": "Capabilities",
+    "capTitle": "Search Engine Optimization",
+    "points": [
+      {
+        "num": "01",
+        "title": "Earned",
+        "body": [
+          "Earn media publicity or exposure gained from methods other than paid advertising.",
+          "Such as mentions in industry blogs, customer reviews, or social media shares."
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Owned",
+        "body": [
+          "Get 5 mile famous with owned media, online assets and platforms you directly control, like your website, blog, and social media accounts."
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Rank on Relevant Keywords",
+        "body": [
+          "Drive organic revenue with a clear cut long term SEO strategy."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "Be Where Your Customers Are",
+        "body": [
+          "Get listed on Apple Maps, Google My Business, Bing Places, and more. Own your SERP. NAP appropriately (hint: it doesn\u2019t mean sleep)."
+        ]
+      }
+    ],
+    "tags": [],
+    "approach": {
+      "label": "Approach",
+      "title": "Search Engine Optimization",
+      "body": []
+    },
+    "stats": "We've driven measurable growth across paid channels.",
+    "howWeHelp": {
+      "label": "How we help.",
+      "services": [
+        "Paid Search",
+        "Websites",
+        "SEO",
+        "Social Media",
+        "Brand Films"
+      ],
+      "body": []
+    },
+    "bottom": "We are your strategic marketing partner in Orange County.",
+    "runBusiness": [
+      {
+        "title": "Get More Traffic",
+        "body": "Employ targeted strategies for driving traffic through paid search, social media, and SEO."
+      },
+      {
+        "title": "Convert More Leads",
+        "body": "Create conversion-based content designed for direct response marketing."
+      },
+      {
+        "title": "Plan for Growth",
+        "body": "Make a game plan built upon transparent reporting and designed to reach milestones. From 1 service van to 50 to 500."
+      }
+    ],
+    "image": "/images/1.png",
+    "partners": [
+      "/images/google-ads-certified.jpg",
+      "/images/microsoft-advertiser-partner.png",
+      "/images/meta-partner.png.webp",
+      "/images/Partner-AC-logo.png",
+      "/images/CR-Agency-Partner-Logo.png"
+    ]
+  },
+  "brand-films": {
+    "slug": "brand-films",
+    "eyebrow": "Capabilities",
+    "title": "Tell your story with Video Marketing",
+    "capLabel": "Capabilities",
+    "capTitle": "Brand Films",
+    "points": [
+      {
+        "num": "01",
+        "title": "Tell Your Story",
+        "body": [
+          "Capture attention and tell your story with a professional brand film shot by our in-house local agency film team."
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Custom for Your Business,\nNot Stock Footage",
+        "body": [
+          "Be unique. Customers want to know what makes you you."
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Focus on Your USPs and Irresistible Offers",
+        "body": [
+          "Leverage video to focus on your unique benefits and offers."
+        ]
+      },
+      {
+        "num": "04",
+        "title": "Good Creative Lowers CPA",
+        "body": [
+          "Over and over again we see brand films outperform static imagery in both brand awareness and direct response campaigns."
+        ]
+      }
+    ],
+    "tags": [],
+    "approach": {
+      "label": "Approach",
+      "title": "Brand Films",
+      "body": []
+    },
+    "stats": "We've driven measurable growth across paid channels.",
+    "howWeHelp": {
+      "label": "How we help.",
+      "services": [
+        "Paid Search",
+        "Websites",
+        "SEO",
+        "Social Media",
+        "Brand Films"
+      ],
+      "body": []
+    },
+    "bottom": "We are your strategic brand film partner in Orange County.",
+    "runBusiness": [
+      {
+        "title": "Get More Traffic",
+        "body": "Employ targeted strategies for driving traffic through paid search, social media, and SEO."
+      },
+      {
+        "title": "Convert More Leads",
+        "body": "Create conversion-based content designed for direct response marketing."
+      },
+      {
+        "title": "Plan for Growth",
+        "body": "Make a game plan built upon transparent reporting and designed to reach milestones. From 1 service van to 50 to 500."
+      }
+    ],
+    "image": "/images/1.png",
+    "partners": [
+      "/images/google-ads-certified.jpg",
+      "/images/microsoft-advertiser-partner.png",
+      "/images/meta-partner.png.webp",
+      "/images/Partner-AC-logo.png",
+      "/images/CR-Agency-Partner-Logo.png"
+    ]
+  }
+}

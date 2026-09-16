@@ -1,0 +1,23 @@
+{
+  "name": "emarketingexperts",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "compare:home-services": "node playwright/compare-home-services.mjs",
+    "audit:home-services": "node playwright/section-audit-home-services.mjs",
+    "audit:site": "node playwright/master-audit.mjs",
+    "audit:site:quick": "node playwright/master-audit.mjs --quick"
+  },
+  "dependencies": {
+    "next": "^15.4.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.49.1",
+    "pngjs": "^7.0.0"
+  }
+}
