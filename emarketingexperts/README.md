@@ -12,6 +12,22 @@ npm run dev
 
 Open http://localhost:3002
 
+## Website Editor (private)
+
+Password-gated CMS for editing text, images, and videos. Saves publish to the live site.
+
+1. Copy `.env.example` to `.env.local` and set `CMS_ADMIN_PASSWORD` + `CMS_ADMIN_SECRET`
+2. Open http://localhost:3002/admin/login
+3. Default local password (if unset): `changeme`
+
+| Path | Purpose |
+|---|---|
+| `/admin/login` | Sign in |
+| `/admin` | Section list |
+| `/admin/edit/[section]` | Edit page content / media / videos |
+
+Uploads go to `public/uploads/`. Overrides are stored in `data/cms-store.json` (gitignored).
+
 ## Routes (matched to Alchemy)
 
 | Section | Path |

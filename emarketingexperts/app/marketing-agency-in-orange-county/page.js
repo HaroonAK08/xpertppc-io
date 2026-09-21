@@ -1,13 +1,19 @@
 import InnerPage from "@/components/InnerPage";
-import { pages } from "@/data/site";
+import { getPageContent } from "@/lib/cms";
 
-const data = pages["marketing-agency-in-orange-county"];
+export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: `${data.title.split(".")[0]} | eMarketing Experts`,
-  description: data.lead || data.title,
-};
+const SLUG = "marketing-agency-in-orange-county";
 
-export default function Page() {
+export async function generateMetadata() {
+  const data = await getPageContent(SLUG);
+  return {
+    title: `${(data?.title || "Start for Free").split(".")[0]} | eMarketing Experts`,
+    description: data?.lead || data?.title || "",
+  };
+}
+
+export default async function Page() {
+  const data = await getPageContent(SLUG);
   return <InnerPage data={data} />;
 }

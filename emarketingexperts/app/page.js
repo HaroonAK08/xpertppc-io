@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CapAccordion from "@/components/CapAccordion";
+import { getPageContent } from "@/lib/cms";
 
 const servicesLeft = [
   {
@@ -44,7 +45,11 @@ const partners = [
   "/images/lead-prosper-logo.png.webp",
 ];
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const home = await getPageContent("home");
+
   return (
     <div className="page-shell">
       <Header />
@@ -52,20 +57,15 @@ export default function HomePage() {
         <section className="hero">
           <div className="hero-row">
             <div className="hero-copy">
-              <p className="eyebrow">
-                The #1 performance marketing agency in OC.
-              </p>
+              <p className="eyebrow">{home.eyebrow}</p>
               <h1>
-                Drive revenue{" "}
+                {home.titleLine1}{" "}
                 <br className="hero-br" />
-                to your business with paid ads.
+                {home.titleLine2}
               </h1>
               <div className="hero-actions">
-                <Link
-                  href="/luxury-yacht-ppc-case-study"
-                  className="btn-text"
-                >
-                  Luxury Yacht PPC Case Study
+                <Link href={home.caseStudyHref} className="btn-text">
+                  {home.caseStudyLabel}
                 </Link>
                 <Link href="/book-intro" className="btn btn-red">
                   Book Intro →
@@ -75,16 +75,14 @@ export default function HomePage() {
             <div aria-hidden />
             <div className="hero-visual">
               <div className="blob">
-                <img src="/images/oh__demo1__1.png" alt="" />
+                <img src={home.blobImage} alt="" />
               </div>
               <div className="alchemy-def">
                 <p className="alchemy-def-term">
-                  al·che·my <span>/ˈalkəmē/</span> <em>noun</em>
+                  {home.alchemyTerm} <span>{home.alchemyPhonetic}</span>{" "}
+                  <em>noun</em>
                 </p>
-                <h5 className="alchemy-def-body">
-                  a seemingly magical process of transformation, creation, or
-                  combination.
-                </h5>
+                <h5 className="alchemy-def-body">{home.alchemyBody}</h5>
               </div>
             </div>
           </div>
@@ -93,12 +91,9 @@ export default function HomePage() {
         <section className="services">
           <div className="services-row">
             <div className="services-intro">
-              <p className="section-kicker">Services</p>
+              <p className="section-kicker">{home.servicesKicker}</p>
               <span className="heading-divider" aria-hidden />
-              <h2>
-                We&apos;re a team of digital alchemists who are excited about
-                turning paid media into revenue.
-              </h2>
+              <h2>{home.servicesTitle}</h2>
               <Link href="/book-intro" className="btn btn-red">
                 Book Intro →
               </Link>
@@ -128,7 +123,7 @@ export default function HomePage() {
         </section>
 
         <div className="band-photo-wrap">
-          <img src="/images/oh__img92.jpg" alt="" />
+          <img src={home.bandImage} alt="" />
         </div>
 
         <section className="capabilities">
@@ -146,11 +141,7 @@ export default function HomePage() {
 
           <div className="cap-split">
             <div className="cap-photo-col">
-              <div
-                className="cap-photo"
-                role="img"
-                aria-label=""
-              />
+              <div className="cap-photo" role="img" aria-label="" />
             </div>
             <aside className="cap-panel">
               <h3>We drive revenue with data-driven decisions.</h3>
