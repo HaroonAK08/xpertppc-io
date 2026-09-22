@@ -14,7 +14,7 @@
   --radius: 8px;
   --gutter: 6vh;
   --max: 1344px;
-  --side: 6vh;
+  --side: 7vh;
   --clb-body-font-size: 1.025rem;
   --clb-titles-h1: clamp(3.105rem, 4.5vw + 0.25rem, 4.5rem);
   --clb-titles-h2: clamp(2.1735rem, 3.15vw + 0.25rem, 3.15rem);
@@ -102,12 +102,10 @@ button {
   }
 }
 
-/* Theme switcher only — no side lines / follow / scroll rails */
 .theme-rail {
   position: fixed;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 6px;
+  top: 320px;
   z-index: 90;
 }
 
@@ -128,7 +126,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 52px;
+  width: 44px;
   border-radius: 0.9rem;
   background: color-mix(in srgb, var(--muted) 16%, transparent);
   box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--muted) 10%, transparent);
@@ -193,9 +191,9 @@ button {
   writing-mode: vertical-rl;
   z-index: 90;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--muted);
+  color: var(--ink);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -476,7 +474,7 @@ button {
   margin: 0;
   font-family: var(--title);
   font-weight: 600;
-  font-size: 5.2vw;
+  font-size: 6.4vw;
   line-height: 0.9em;
   letter-spacing: -0.045em;
 }
@@ -2539,7 +2537,9 @@ button {
 }
 
 .book-intro-hero {
-  padding: 2.5vh 0 4vh;
+  background: var(--dark);
+  color: #fff;
+  padding: 10vh 0;
 }
 
 .book-intro-hero-grid {
@@ -2548,20 +2548,24 @@ button {
 
 .book-intro-copy .exp-sub {
   margin-bottom: 0.85rem;
+  color: #ffffffbf;
 }
 
 .book-intro-title {
   margin: 0 0 1.25rem;
+  color: #fff;
 }
 
 .book-phone-line {
   display: inline-block;
   margin-top: 0.15em;
+  color: #fff;
 }
 
 .book-lead {
   max-width: 38ch;
   margin: 0 0 1.75rem;
+  color: #ffffffbf;
 }
 
 .book-photo-band {

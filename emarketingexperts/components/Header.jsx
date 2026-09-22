@@ -47,6 +47,23 @@ export default function Header() {
         >
           <button
             type="button"
+            className="color-switcher-item dark"
+            aria-label="Dark"
+            aria-pressed={theme === "dark"}
+            onClick={() => setTheme("dark")}
+          >
+            <span className="caption">Dark</span>
+            <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden>
+              <path
+                d="M14.5 10.2A6.2 6.2 0 0 1 7.8 3.5 6.5 6.5 0 1 0 14.5 10.2Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
             className="color-switcher-item light"
             aria-label="Light"
             aria-pressed={theme === "light"}
@@ -63,25 +80,24 @@ export default function Header() {
               />
             </svg>
           </button>
-          <button
-            type="button"
-            className="color-switcher-item dark"
-            aria-label="Dark"
-            aria-pressed={theme === "dark"}
-            onClick={() => setTheme("dark")}
-          >
-            <span className="caption">Dark</span>
-            <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden>
-              <path
-                d="M14.5 10.2A6.2 6.2 0 0 1 7.8 3.5 6.5 6.5 0 1 0 14.5 10.2Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
         </div>
       </aside>
+
+      <div className="right-rail">
+        <span>Follow Us</span>
+        <span>—</span>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          Ig.
+        </a>
+        <span>/</span>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          Fb.
+        </a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          Lk.
+        </a>
+      </div>
 
       <header className="site-header">
         <div className="header-inner">
