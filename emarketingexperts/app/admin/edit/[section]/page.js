@@ -2,7 +2,18 @@
 
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+// Which live page to preview for each section. Sections that aren't a
+// single page (nav, site settings) preview the homepage, since that's
+// where the header/footer/nav are visible.
+function previewPathFor(sectionId, kind) {
+  if (sectionId === "home") return "/";
+  if (sectionId === "book-intro") return "/book-intro";
+  if (sectionId === "nav" || sectionId === "site") return "/";
+  if (kind === "page") return `/${sectionId}`;
+  return "/";
+}
 
 const IMAGE_KEYS = new Set([
   "heroImage",
@@ -215,15 +226,25 @@ export default function EditSectionPage() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [autoSaving, setAutoSaving] = useState(false);
+  const [previewTick, setPreviewTick] = useState(0);
+  const skipNextAutoSave = useRef(true);
+  const debounceTimer = useRef(null);
 
   const sectionId = useMemo(
     () => (Array.isArray(section) ? section[0] : section),
     [section]
   );
 
+  const previewPath = useMemo(
+    () => previewPathFor(sectionId, meta?.kind),
+    [sectionId, meta]
+  );
+
   useEffect(() => {
     if (!sectionId) return;
     setError("");
+    skipNextAutoSave.current = true;
     fetch(`/api/admin/content?section=${encodeURIComponent(sectionId)}`)
       .then(async (res) => {
         const json = await res.json();
@@ -234,9 +255,10 @@ export default function EditSectionPage() {
       .catch((err) => setError(err.message));
   }, [sectionId]);
 
-  const save = async () => {
-    setBusy(true);
-    setStatus("");
+  const persist = async ({ silent } = {}) => {
+    if (silent) setAutoSaving(true);
+    else setBusy(true);
+    if (!silent) setStatus("");
     setError("");
     try {
       const res = await fetch("/api/admin/content", {
@@ -246,14 +268,34 @@ export default function EditSectionPage() {
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Save failed");
-      setStatus("Saved — live site updated.");
+      setStatus(silent ? "Auto-saved — preview updated." : "Saved — live site updated.");
+      setPreviewTick((t) => t + 1);
       router.refresh();
     } catch (err) {
       setError(err.message);
     } finally {
-      setBusy(false);
+      if (silent) setAutoSaving(false);
+      else setBusy(false);
     }
   };
+
+  const save = () => persist({ silent: false });
+
+  // Auto-save + refresh the live preview shortly after each edit, so the
+  // right-hand panel reflects changes without needing an explicit click.
+  useEffect(() => {
+    if (!data) return;
+    if (skipNextAutoSave.current) {
+      skipNextAutoSave.current = false;
+      return;
+    }
+    if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    debounceTimer.current = setTimeout(() => {
+      persist({ silent: true });
+    }, 900);
+    return () => clearTimeout(debounceTimer.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const reset = async () => {
     if (!confirm("Reset this section to default content?")) return;
@@ -270,8 +312,10 @@ export default function EditSectionPage() {
         `/api/admin/content?section=${encodeURIComponent(sectionId)}`
       );
       const body = await reload.json();
+      skipNextAutoSave.current = true;
       setData(body.data);
       setStatus("Reset to defaults.");
+      setPreviewTick((t) => t + 1);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -297,7 +341,7 @@ export default function EditSectionPage() {
   }
 
   return (
-    <div className="cms-wrap">
+    <div className="cms-wrap cms-wrap-wide">
       <div className="cms-edit-top">
         <div>
           <Link href="/admin" className="cms-back">
@@ -305,8 +349,8 @@ export default function EditSectionPage() {
           </Link>
           <h1>{meta?.label || sectionId}</h1>
           <p className="cms-muted">
-            Edit fields below. Upload images or paste URLs. YouTube IDs go in
-            video fields.
+            Edit fields below. Upload images or paste URLs. Changes appear in
+            the preview automatically a moment after you stop typing.
           </p>
         </div>
         <div className="cms-actions">
@@ -330,7 +374,31 @@ export default function EditSectionPage() {
       </div>
       {status ? <div className="cms-ok">{status}</div> : null}
       {error ? <div className="cms-error">{error}</div> : null}
-      <ObjectEditor data={data} onChange={setData} />
+
+      <div className="cms-split">
+        <div className="cms-edit-col">
+          <ObjectEditor data={data} onChange={setData} />
+        </div>
+        <div className="cms-preview-col">
+          <div className="cms-preview-head">
+            <span>Live preview</span>
+            {autoSaving ? (
+              <span className="cms-preview-status">Saving…</span>
+            ) : (
+              <span className="cms-preview-status cms-preview-status-muted">
+                {previewPath}
+              </span>
+            )}
+          </div>
+          <div className="cms-preview-frame">
+            <iframe
+              key={previewTick}
+              src={previewPath}
+              title="Live site preview"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
