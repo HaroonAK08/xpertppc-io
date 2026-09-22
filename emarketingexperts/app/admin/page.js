@@ -20,7 +20,7 @@ export default function AdminHomePage() {
   }, []);
 
   const groups = {
-    Core: meta.filter((m) => ["home", "book-intro", "site"].includes(m.id)),
+    Core: meta.filter((m) => ["home", "book-intro", "site", "nav"].includes(m.id)),
     "Case Studies": meta.filter((m) =>
       [
         "500000-attendees-to-the-fair-in-10-weekends",

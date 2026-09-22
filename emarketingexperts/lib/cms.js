@@ -9,6 +9,7 @@ const STORE_PATH = path.join(process.cwd(), "data", "cms-store.json");
 export const PAGE_META = [
   { id: "home", label: "Homepage", kind: "home" },
   { id: "book-intro", label: "Book Intro", kind: "book" },
+  { id: "nav", label: "Navigation Menu", kind: "nav" },
   {
     id: "marketing-agency-in-orange-county",
     label: "Start for Free (Promo)",
@@ -135,6 +136,7 @@ export async function getPageContent(slug) {
   if (slug === "home") return content.home;
   if (slug === "book-intro") return content.bookIntro;
   if (slug === "site") return content.site;
+  if (slug === "nav") return content.nav;
   return content.pages?.[slug] || null;
 }
 
@@ -145,6 +147,7 @@ export async function saveContentSection(sectionId, sectionData) {
   if (sectionId === "home") next.home = sectionData;
   else if (sectionId === "book-intro") next.bookIntro = sectionData;
   else if (sectionId === "site") next.site = sectionData;
+  else if (sectionId === "nav") next.nav = sectionData;
   else {
     next.pages = { ...(stored.pages || {}), [sectionId]: sectionData };
   }
@@ -160,6 +163,7 @@ export async function resetContentSection(sectionId) {
   if (sectionId === "home") delete next.home;
   else if (sectionId === "book-intro") delete next.bookIntro;
   else if (sectionId === "site") delete next.site;
+  else if (sectionId === "nav") delete next.nav;
   else if (next.pages) {
     delete next.pages[sectionId];
     if (!Object.keys(next.pages).length) delete next.pages;

@@ -2,26 +2,40 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { nav } from "@/data/site";
+import { useEffect, useMemo, useState } from "react";
+import { nav as defaultNav } from "@/data/site";
 
-const primaryNav = [
-  { href: "/", label: "Home Sweet Home", num: "01" },
-  { href: "#", label: "Expertise", num: "02", children: nav.expertise },
-  { href: "#", label: "Capabilities", num: "03", children: nav.capabilities },
-  {
-    href: "/marketing-agency-in-orange-county",
-    label: "Start for Free",
-    num: "04",
-  },
-  { href: "#", label: "Case Studies", num: "05", children: nav.cases },
-  { href: "/book-intro", label: "Book Intro", num: "06" },
-];
+function buildPrimaryNav(nav) {
+  return [
+    { href: "/", label: "Home Sweet Home", num: "01" },
+    { href: "#", label: "Expertise", num: "02", children: nav.expertise },
+    { href: "#", label: "Capabilities", num: "03", children: nav.capabilities },
+    {
+      href: "/marketing-agency-in-orange-county",
+      label: "Start for Free",
+      num: "04",
+    },
+    { href: "#", label: "Case Studies", num: "05", children: nav.cases },
+    { href: "/book-intro", label: "Book Intro", num: "06" },
+  ];
+}
 
 export default function Header() {
   const pathname = usePathname();
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
+  const [nav, setNav] = useState(defaultNav);
+
+  useEffect(() => {
+    fetch("/api/content?section=nav")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json?.data) setNav({ ...defaultNav, ...json.data });
+      })
+      .catch(() => {});
+  }, []);
+
+  const primaryNav = useMemo(() => buildPrimaryNav(nav), [nav]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
