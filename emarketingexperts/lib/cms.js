@@ -34,7 +34,9 @@ export const PAGE_META = [
   { id: "brand-awareness", label: "Paid Social", kind: "page" },
   { id: "seo", label: "SEO", kind: "page" },
   { id: "brand-films", label: "Video Marketing", kind: "page" },
-  { id: "site", label: "Site Settings", kind: "site" },
+  { id: "site", label: "Site Settings & Footer", kind: "site" },
+  { id: "privacy", label: "Privacy Policy", kind: "page" },
+  { id: "terms", label: "Terms of Service", kind: "page" },
 ];
 
 function defaultHome() {
@@ -98,6 +100,10 @@ function defaultSite() {
     footerAddress:
       "eMarketing Experts\nNewport Beach,\nCalifornia\nUnited States",
     footerBookBlurb: "Interested in working with us?",
+    footerCopyrightName: "eMarketing Experts",
+    footerCopyrightSuffix: "Made with passion.",
+    footerPrivacyLabel: "Privacy & Cookie Policy",
+    footerTermsLabel: "Terms of Service",
   };
 }
 

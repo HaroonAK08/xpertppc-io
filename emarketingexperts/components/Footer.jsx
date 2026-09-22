@@ -11,6 +11,10 @@ const FALLBACK = {
   footerAddress:
     "eMarketing Experts\nNewport Beach,\nCalifornia\nUnited States",
   footerBookBlurb: "Interested in working with us?",
+  footerCopyrightName: "eMarketing Experts",
+  footerCopyrightSuffix: "Made with passion.",
+  footerPrivacyLabel: "Privacy & Cookie Policy",
+  footerTermsLabel: "Terms of Service",
 };
 
 export default function Footer() {
@@ -71,12 +75,12 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="wrap footer-bottom-inner">
           <span>
-            © {new Date().getFullYear()}, eMarketing Experts. Made with passion.
+            © {new Date().getFullYear()}, {site.footerCopyrightName}. {site.footerCopyrightSuffix}
           </span>
           <span>
-            <Link href="/privacy">Privacy & Cookie Policy</Link>
+            <Link href="/privacy">{site.footerPrivacyLabel}</Link>
             {" | "}
-            <Link href="/terms">Terms of Service</Link>
+            <Link href="/terms">{site.footerTermsLabel}</Link>
           </span>
         </div>
       </div>

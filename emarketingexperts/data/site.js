@@ -431,4 +431,16 @@ export const pages = {
     collabBody:
       "We’re a team of digital alchemists who are excited about turning paid media into revenue.",
   },
+  privacy: {
+    eyebrow: "Legal",
+    title: "Privacy & Cookie Policy",
+    lead: "How we handle information on this site.",
+    body: "We collect information you submit through forms (name, email, phone, company) to respond to inquiries. We may use analytics cookies to understand site usage. Contact hello@emarketingexperts.com for privacy requests.",
+  },
+  terms: {
+    eyebrow: "Legal",
+    title: "Terms of Service",
+    lead: "Terms for using this website.",
+    body: "Content on this site is for general information. Case study metrics describe historical client results and are not guarantees of future performance. Engagement terms are defined in a separate client agreement.",
+  },
 };

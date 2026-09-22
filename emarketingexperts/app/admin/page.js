@@ -37,6 +37,7 @@ export default function AdminHomePage() {
         m.id
       )
     ),
+    Legal: meta.filter((m) => ["privacy", "terms"].includes(m.id)),
   };
 
   return (

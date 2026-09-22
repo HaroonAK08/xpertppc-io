@@ -1,16 +1,21 @@
 import PageShell from "@/components/PageShell";
+import { getPageContent } from "@/lib/cms";
 
-export const metadata = { title: "Terms of Service | eMarketing Experts" };
+export const dynamic = "force-dynamic";
 
-export default function Page() {
+const SLUG = "terms";
+
+export async function generateMetadata() {
+  const data = await getPageContent(SLUG);
+  return { title: `${data?.title || "Terms of Service"} | eMarketing Experts` };
+}
+
+export default async function Page() {
+  const data = await getPageContent(SLUG);
   return (
-    <PageShell eyebrow="Legal" title="Terms of Service" lead="Terms for using this website." cta={false}>
+    <PageShell eyebrow={data?.eyebrow} title={data?.title} lead={data?.lead} cta={false}>
       <div className="stat-card">
-        <p>
-          Content on this site is for general information. Case study metrics describe
-          historical client results and are not guarantees of future performance.
-          Engagement terms are defined in a separate client agreement.
-        </p>
+        <p>{data?.body}</p>
       </div>
     </PageShell>
   );
