@@ -110,6 +110,7 @@ function ObjectEditor({ data, onChange, path = "" }) {
                   Item {index + 1}
                   {item?.label ? ` — ${item.label}` : ""}
                   {item?.title ? ` — ${item.title}` : ""}
+                  {item?.heading ? ` — ${item.heading}` : ""}
                 </strong>
                 <button
                   type="button"

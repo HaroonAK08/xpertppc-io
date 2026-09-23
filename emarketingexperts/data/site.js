@@ -489,14 +489,134 @@ export const pages = {
   },
   privacy: {
     eyebrow: "Legal",
-    title: "Privacy & Cookie Policy",
+    title: "Privacy Policy",
     lead: "How we handle information on this site.",
-    body: "We collect information you submit through forms (name, email, phone, company) to respond to inquiries. We may use analytics cookies to understand site usage. Contact info@emarketingexperts.net for privacy requests.",
+    effectiveDate: "September 11, 2026",
+    intro:
+      "eMarketing Experts (\"we\", \"us\", or \"our\") respects your privacy. This Privacy Policy explains how we collect, use, protect, and retain information through our website and our private internal application, eMarketing Ads Intelligence.",
+    sections: [
+      {
+        heading: "Information We Collect",
+        body: "We may collect information that you voluntarily provide through our website, such as your name, email address, telephone number, company details, and message.\n\nWhen an authorized user connects eMarketing Ads Intelligence to Google, the application may access Google account identifiers, OAuth authorization information, Google Ads customer-account information, campaign performance, budgets, keywords, search terms, conversion metrics, and related reporting data.\n\nWe may also process limited technical and operational information, including report timestamps, application logs, cache freshness, and session metadata needed to operate and secure the application.",
+      },
+      {
+        heading: "How We Use Information",
+        body: "To respond to enquiries and provide requested marketing services.\nTo authenticate authorized users and connect to permitted Google Ads accounts.\nTo retrieve read-only Google Ads data and generate performance reports, audits, and recommendations.\nTo maintain, secure, troubleshoot, and improve our services.\nTo comply with applicable legal obligations.",
+      },
+      {
+        heading: "Google User Data",
+        body: "eMarketing Ads Intelligence uses Google Ads information only for authorized reporting and analysis. Its Google Ads integration is read-only and does not create, edit, pause, enable, delete, or otherwise modify campaigns, advertisements, keywords, bids, budgets, conversion actions, or accounts.\n\nOur use and transfer of information received from Google APIs will comply with the Google API Services User Data Policy, including its Limited Use requirements. We request only the access needed to provide the application's stated functionality.",
+      },
+      {
+        heading: "Storage and Retention",
+        body: "The application may temporarily cache relevant Google Ads performance snapshots on the authorized user's local computer to improve speed and reduce repetitive requests. It may retain generated reports and limited session metadata where useful. We do not intentionally store Google passwords, API keys, developer tokens, OAuth client secrets, or other credentials in website forms or application databases.\n\nWe retain information only as long as reasonably necessary for the purposes described in this policy, contractual requirements, security, or applicable law. Cached or stored application data may be deleted when it is no longer required.",
+      },
+      {
+        heading: "Sharing and Service Providers",
+        body: "We do not sell personal information or Google user data. Information may be processed by service providers necessary to operate our website and services, such as website hosting and Google APIs.\n\nOpenAI analysis is optional within eMarketing Ads Intelligence. Routine reporting does not require OpenAI. If an authorized user explicitly requests an AI feature, only the smallest relevant evidence package needed for that request should be sent for processing; entire raw account datasets are not sent unless genuinely necessary.\n\nWe may disclose information when required by law or when reasonably necessary to protect our rights, users, or services.",
+      },
+      {
+        heading: "Cookies and Analytics",
+        body: "Our public website may use cookies or similar technologies for essential functionality, security, analytics, and performance measurement. Browser settings can be used to manage cookies, although disabling them may affect some functionality.",
+      },
+      {
+        heading: "Security",
+        body: "We use reasonable administrative and technical safeguards designed to protect information. No method of electronic storage or transmission is completely secure, so absolute security cannot be guaranteed.",
+      },
+      {
+        heading: "Your Choices and Rights",
+        body: "You may request access to, correction of, or deletion of personal information we control, subject to applicable law. Authorized users may revoke Google account access at any time through their Google Account permissions. Revoking access prevents future retrieval but may not automatically delete information already retained where legally or operationally required.",
+      },
+      {
+        heading: "Children's Privacy",
+        body: "Our services are intended for businesses and are not directed to children. We do not knowingly collect personal information from children.",
+      },
+      {
+        heading: "Changes to This Policy",
+        body: "We may update this Privacy Policy periodically. The effective date at the top of this page will indicate the latest revision.",
+      },
+      {
+        heading: "Contact Us",
+        body: "For privacy questions or requests, contact us at info@emarketingexperts.net.",
+      },
+    ],
   },
   terms: {
     eyebrow: "Legal",
     title: "Terms of Service",
     lead: "Terms for using this website.",
-    body: "Content on this site is for general information. Case study metrics describe historical client results and are not guarantees of future performance. Engagement terms are defined in a separate client agreement.",
+    effectiveDate: "September 11, 2026",
+    intro:
+      "These Terms of Service (\"Terms\") govern your use of the eMarketing Experts website, our marketing services, and the private internal application eMarketing Ads Intelligence. By using our website or services, you agree to these Terms.",
+    sections: [
+      {
+        heading: "About Our Services",
+        body: "eMarketing Experts provides digital marketing services that may include paid-media strategy, campaign management, conversion tracking, reporting, performance analysis, creative direction, and related consulting. The exact scope, fees, responsibilities, and deliverables for client work may be described in a separate written agreement.",
+      },
+      {
+        heading: "eMarketing Ads Intelligence",
+        body: "eMarketing Ads Intelligence is a private internal reporting and analysis application. Its Google Ads integration is read-only. It does not create, edit, pause, enable, delete, or otherwise modify Google Ads campaigns, advertisements, keywords, bids, budgets, conversion actions, or accounts.\n\nAccess is limited to authorized users and permitted advertising accounts. You must not attempt to gain unauthorized access, interfere with the application, extract credentials, circumvent security controls, or use the application for unlawful purposes.",
+      },
+      {
+        heading: "Google Account Authorization",
+        body: "When an authorized user connects a Google account, the application may retrieve permitted Google Ads reporting data to provide its functionality. You are responsible for ensuring that you have authority to access the connected accounts and data. Google access can be revoked through Google Account permissions.",
+      },
+      {
+        heading: "Optional Artificial-Intelligence Features",
+        body: "Routine reporting and deterministic analysis do not require OpenAI. Optional AI features may generate interpretations, explanations, or recommendations from selected evidence. AI-generated material may be incomplete or inaccurate and must be reviewed by a qualified person before it is relied upon or communicated to a client. AI output is not presented as factual Google Ads data.",
+      },
+      {
+        heading: "No Automatic Advertising Changes",
+        body: "Reports, findings, and recommendations are informational. They do not automatically change advertising accounts. Any future account-changing capability would require separate authorization, safeguards, and human approval and is not part of the current application.",
+      },
+      {
+        heading: "User Responsibilities",
+        body: "Provide accurate information and maintain the security of your account and devices.\nUse the website and services only for lawful business purposes.\nRespect third-party rights, platform policies, and applicable advertising laws.\nReview reports and recommendations before making business or advertising decisions.\nNotify us promptly of suspected unauthorized access or misuse.",
+      },
+      {
+        heading: "Intellectual Property",
+        body: "The website, application, branding, software, analysis methods, templates, and original content are owned by or licensed to eMarketing Experts and are protected by applicable intellectual-property laws. No ownership rights are transferred except where expressly agreed in writing.\n\nClients retain ownership of their advertising accounts, business information, and materials they provide. Any licence needed for us to perform agreed services is limited to that purpose.",
+      },
+      {
+        heading: "Third-Party Services",
+        body: "Our services may rely on third-party platforms such as Google, Google Ads, Google Analytics, website-hosting providers, and optional AI providers. Those services are governed by their own terms and policies. We are not responsible for outages, policy changes, account suspensions, data delays, or other actions controlled by third parties.",
+      },
+      {
+        heading: "Performance and Data Limitations",
+        body: "Advertising results are affected by many factors outside our control. We do not guarantee rankings, traffic, leads, sales, return on advertising spend, or other specific outcomes unless expressly stated in a separate written agreement.\n\nReports depend on the accuracy, availability, attribution, and timing of source-platform data. Delayed, incomplete, unavailable, or incorrectly configured tracking may affect results. Missing data will not be intentionally fabricated.",
+      },
+      {
+        heading: "Confidentiality",
+        body: "We use reasonable care to protect confidential client information and use it only to provide services, operate the application, meet legal obligations, or as otherwise authorized. Separate confidentiality terms in a client agreement will take priority where applicable.",
+      },
+      {
+        heading: "Privacy",
+        body: "Our collection and use of personal information and Google user data are described in our Privacy Policy.",
+      },
+      {
+        heading: "Disclaimer",
+        body: "Except as expressly agreed in writing, the website, application, reports, and related services are provided on an \"as available\" basis. To the extent permitted by law, we disclaim implied warranties, including merchantability, fitness for a particular purpose, and non-infringement.",
+      },
+      {
+        heading: "Limitation of Liability",
+        body: "To the extent permitted by law, eMarketing Experts will not be liable for indirect, incidental, special, consequential, or punitive damages, lost profits, lost revenue, lost data, or advertising-platform decisions arising from use of the website, application, or services. Nothing in these Terms excludes liability that cannot legally be excluded.",
+      },
+      {
+        heading: "Suspension and Termination",
+        body: "We may suspend or terminate access when reasonably necessary to address security risks, unlawful activity, misuse, non-payment under an applicable agreement, or a material breach of these Terms. You may stop using the website or application at any time and may request revocation or deletion where applicable.",
+      },
+      {
+        heading: "Changes to These Terms",
+        body: "We may update these Terms periodically. The effective date at the top of this page identifies the latest revision. Continued use after an update constitutes acceptance of the revised Terms where permitted by law.",
+      },
+      {
+        heading: "Governing Law",
+        body: "These Terms are governed by the applicable laws of Pakistan, without regard to conflict-of-law principles, unless a separate written agreement provides otherwise.",
+      },
+      {
+        heading: "Contact Us",
+        body: "Questions about these Terms may be sent to info@emarketingexperts.net.",
+      },
+    ],
   },
 };

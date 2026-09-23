@@ -1064,6 +1064,22 @@ button {
   background: var(--bg);
 }
 
+.legal-effective-date {
+  margin: -1rem 0 1.5rem;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.legal-intro {
+  margin-bottom: 1.5rem;
+}
+
+.legal-sections {
+  display: grid;
+  gap: 16px;
+}
+
 .stat-card h3 {
   margin: 0 0 8px;
   color: var(--red);
