@@ -7,9 +7,14 @@ import { nav as defaultNav } from "@/data/site";
 
 const SITE_FALLBACK = {
   brandName: "emarketing experts performance marketing agency",
+  logoImage: "/images/emarketing-experts-logo.png",
   socialInstagram: "https://www.instagram.com/",
   socialFacebook: "https://www.facebook.com/",
   socialLinkedin: "https://www.linkedin.com/",
+  whatsappNumber: "923009682964",
+  whatsappMessage:
+    "Hi, I'd like to learn more about eMarketing Experts' digital marketing services.",
+  whatsappLabel: "Let's talk strategy",
 };
 
 function buildPrimaryNav(nav) {
@@ -76,6 +81,10 @@ export default function Header() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  const whatsappHref = site.whatsappNumber
+    ? `https://api.whatsapp.com/send/?phone=${site.whatsappNumber}&text=${encodeURIComponent(site.whatsappMessage || "")}`
+    : null;
 
   const isActive = (item) => {
     if (item.href === "/") return pathname === "/";
@@ -149,15 +158,36 @@ export default function Header() {
         </a>
       </div>
 
+      {whatsappHref ? (
+        <a
+          className="whatsapp-float"
+          href={whatsappHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat on WhatsApp"
+          data-cms-key="site::whatsappNumber"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.08-1.33A9.96 9.96 0 0 0 12.02 22C17.52 22 22 17.52 22 12S17.52 2 12.02 2Zm0 18.1c-1.6 0-3.1-.43-4.4-1.2l-.32-.18-3.02.79.8-2.94-.2-.3a8.1 8.1 0 0 1-1.24-4.27c0-4.49 3.65-8.14 8.14-8.14 2.17 0 4.21.85 5.75 2.39a8.08 8.08 0 0 1 2.38 5.75c0 4.49-3.65 8.1-8.09 8.1Zm4.47-6.06c-.24-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.24-.64.8-.78.97-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.46-.28Z" />
+          </svg>
+          <span>{site.whatsappLabel}</span>
+        </a>
+      ) : null}
+
       <header className="site-header">
         <div className="header-inner">
           <Link
             href="/"
             className="brand"
             onClick={() => setOpen(false)}
-            data-cms-key="site::brandName"
           >
-            {site.brandName}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={site.logoImage}
+              alt={site.brandName}
+              className="brand-logo"
+              data-cms-key="site::logoImage"
+            />
           </Link>
 
           <nav className="nav">

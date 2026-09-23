@@ -121,7 +121,7 @@ function defaultBook() {
   return {
     eyebrow: "Be brave, say hello.",
     title: "Book A Meeting",
-    phone: "949.322.0387",
+    phone: "+92-300-9682964",
     lead: "The first step to exceeding your marketing goals is booking this meeting. We'll talk about your existing pain points and assess how our strategy can help you generate revenue. (Also, things like scope, pricing, you know the drill.)",
     heroImage: "/images/oh__img120.jpg",
     formHeading: "Tell us about your business.",
@@ -152,12 +152,16 @@ function defaultBook() {
 function defaultSite() {
   return {
     brandName: "emarketing experts performance marketing agency",
-    phone: "949.322.0387",
-    email: "hello@emarketingexperts.com",
+    logoImage: "/images/emarketing-experts-logo.png",
+    phone: "+92-300-9682964",
+    email: "info@emarketingexperts.net",
+    whatsappNumber: "923009682964",
+    whatsappMessage:
+      "Hi, I'd like to learn more about eMarketing Experts' digital marketing services.",
+    whatsappLabel: "Let's talk strategy",
     footerInstaUrl: "https://www.instagram.com/",
-    footerCity: "Newport Beach",
-    footerAddress:
-      "eMarketing Experts\nNewport Beach,\nCalifornia\nUnited States",
+    footerCity: "Bahawalpur",
+    footerAddress: "eMarketing Experts\nBahawalpur, Punjab\nPakistan",
     footerBookBlurb: "Interested in working with us?",
     footerCopyrightName: "eMarketing Experts",
     footerCopyrightSuffix: "Made with passion.",

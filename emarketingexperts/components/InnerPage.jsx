@@ -79,7 +79,7 @@ export default function InnerPage({ data, site, slug }) {
   const k = (path) => `${slug}::${path}`;
 
   if (data.type === "promo") {
-    const phone = data.phone || "949.322.0387";
+    const phone = data.phone || "+92-300-9682964";
     const clients = data.clients || [
       "/images/boudin-whte.png",
       "/images/Pacific-Avalon-Logo-white.png",

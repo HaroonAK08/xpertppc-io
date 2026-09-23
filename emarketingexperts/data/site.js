@@ -255,7 +255,7 @@ export const pages = {
     eyebrow: "June Special: Start for Free",
     title: "Get more customers for your business with paid ads.",
     lead: "Welcome to eMarketing Experts, the best performance marketing agency in Orange County.",
-    phone: "949.322.0387",
+    phone: "+92-300-9682964",
     ctaPrimaryLabel: "Start for Free in June →",
     bullets: [
       "Start for free in June with a signed 3 month contract starting July 1, 2026.",
@@ -491,7 +491,7 @@ export const pages = {
     eyebrow: "Legal",
     title: "Privacy & Cookie Policy",
     lead: "How we handle information on this site.",
-    body: "We collect information you submit through forms (name, email, phone, company) to respond to inquiries. We may use analytics cookies to understand site usage. Contact hello@emarketingexperts.com for privacy requests.",
+    body: "We collect information you submit through forms (name, email, phone, company) to respond to inquiries. We may use analytics cookies to understand site usage. Contact info@emarketingexperts.net for privacy requests.",
   },
   terms: {
     eyebrow: "Legal",

@@ -116,8 +116,8 @@ export default function BookIntroClient({ data, site }) {
             )}
             <p className="book-form-note">
               Or email{" "}
-              <a href={`mailto:${site?.email || "hello@emarketingexperts.com"}`} data-cms-key="site::email">
-                {site?.email || "hello@emarketingexperts.com"}
+              <a href={`mailto:${site?.email || "info@emarketingexperts.net"}`} data-cms-key="site::email">
+                {site?.email || "info@emarketingexperts.net"}
               </a>
             </p>
           </div>

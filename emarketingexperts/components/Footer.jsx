@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 
 const FALLBACK = {
   brandName: "emarketing experts performance marketing agency",
-  email: "hello@emarketingexperts.com",
+  logoImage: "/images/emarketing-experts-logo.png",
+  email: "info@emarketingexperts.net",
+  phone: "+92-300-9682964",
+  whatsappNumber: "923009682964",
+  whatsappMessage:
+    "Hi, I'd like to learn more about eMarketing Experts' digital marketing services.",
   footerInstaUrl: "https://www.instagram.com/",
-  footerCity: "Newport Beach",
-  footerAddress:
-    "eMarketing Experts\nNewport Beach,\nCalifornia\nUnited States",
+  footerCity: "Bahawalpur",
+  footerAddress: "eMarketing Experts\nBahawalpur, Punjab\nPakistan",
   footerBookBlurb: "Interested in working with us?",
   footerCopyrightName: "eMarketing Experts",
   footerCopyrightSuffix: "Made with passion.",
@@ -33,10 +37,23 @@ export default function Footer() {
     .split("\n")
     .filter(Boolean);
 
+  const whatsappHref = site.whatsappNumber
+    ? `https://api.whatsapp.com/send/?phone=${site.whatsappNumber}&text=${encodeURIComponent(site.whatsappMessage || "")}`
+    : null;
+
   return (
     <footer className="footer">
       <div className="wrap footer-grid">
         <div className="footer-col">
+          {site.logoImage ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={site.logoImage}
+              alt={site.brandName}
+              className="footer-logo"
+              data-cms-key="site::logoImage"
+            />
+          ) : null}
           <p className="footer-insta">
             <a
               href={site.footerInstaUrl}
@@ -78,6 +95,32 @@ export default function Footer() {
                 {site.email}
               </a>
             </strong>
+            {site.phone ? (
+              <>
+                <br />
+                <a
+                  className="footer-email"
+                  href={`tel:${String(site.phone).replace(/[^+\d]/g, "")}`}
+                  data-cms-key="site::phone"
+                >
+                  {site.phone}
+                </a>
+              </>
+            ) : null}
+            {whatsappHref ? (
+              <>
+                <br />
+                <a
+                  className="footer-email"
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cms-key="site::whatsappNumber"
+                >
+                  WhatsApp
+                </a>
+              </>
+            ) : null}
           </p>
         </div>
       </div>
