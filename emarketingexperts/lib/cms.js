@@ -164,6 +164,22 @@ function defaultSite() {
     footerPrivacyLabel: "Privacy & Cookie Policy",
     footerTermsLabel: "Terms of Service",
     bookIntroCtaLabel: "Book Intro →",
+    socialInstagram: "https://www.instagram.com/",
+    socialFacebook: "https://www.facebook.com/",
+    socialLinkedin: "https://www.linkedin.com/",
+    statsLabel: "Statistics",
+    strategyLabel: "Strategy",
+    bookMeetingLabel: "Book A Meeting",
+    testimonialsLabel: "Testimonials",
+    bottomLineLabel: "The bottom line.",
+    runBusinessTitle: "Run your best business.",
+    collabLabel: "Collaboration",
+    braveLabel: "Be brave, say hi.",
+    collabTitleLine1: "Ready to drive revenue?",
+    collabTitleLine2: "Book an intro.",
+    bookThanksMessage: "Thanks — we'll be in touch shortly.",
+    bookTestimonialsTitle1: "What our clients",
+    bookTestimonialsTitle2: "say about us.",
   };
 }
 

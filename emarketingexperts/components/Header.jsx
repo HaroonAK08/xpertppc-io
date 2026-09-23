@@ -5,6 +5,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { nav as defaultNav } from "@/data/site";
 
+const SITE_FALLBACK = {
+  brandName: "emarketing experts performance marketing agency",
+  socialInstagram: "https://www.instagram.com/",
+  socialFacebook: "https://www.facebook.com/",
+  socialLinkedin: "https://www.linkedin.com/",
+};
+
 function buildPrimaryNav(nav) {
   return [
     { href: "/", label: nav.homeLabel, num: "01", cmsKey: "nav::homeLabel" },
@@ -47,12 +54,19 @@ export default function Header() {
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
   const [nav, setNav] = useState(defaultNav);
+  const [site, setSite] = useState(SITE_FALLBACK);
 
   useEffect(() => {
     fetch("/api/content?section=nav")
       .then((res) => res.json())
       .then((json) => {
         if (json?.data) setNav({ ...defaultNav, ...json.data });
+      })
+      .catch(() => {});
+    fetch("/api/content?section=site")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json?.data) setSite({ ...SITE_FALLBACK, ...json.data });
       })
       .catch(() => {});
   }, []);
@@ -122,23 +136,28 @@ export default function Header() {
       <div className="right-rail">
         <span>Follow Us</span>
         <span>—</span>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+        <a href={site.socialInstagram} target="_blank" rel="noreferrer" data-cms-key="site::socialInstagram">
           Ig.
         </a>
         <span>/</span>
-        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+        <a href={site.socialFacebook} target="_blank" rel="noreferrer" data-cms-key="site::socialFacebook">
           Fb.
         </a>
         <span>/</span>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <a href={site.socialLinkedin} target="_blank" rel="noreferrer" data-cms-key="site::socialLinkedin">
           Lk.
         </a>
       </div>
 
       <header className="site-header">
         <div className="header-inner">
-          <Link href="/" className="brand" onClick={() => setOpen(false)}>
-            emarketing experts performance marketing agency
+          <Link
+            href="/"
+            className="brand"
+            onClick={() => setOpen(false)}
+            data-cms-key="site::brandName"
+          >
+            {site.brandName}
           </Link>
 
           <nav className="nav">

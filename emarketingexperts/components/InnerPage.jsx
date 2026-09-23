@@ -4,26 +4,19 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-function Collab({
-  label = "Collaboration",
-  title,
-  body = "We’re a team of digital alchemists who are excited about turning paid media into revenue.",
-  bodyKey,
-  ctaLabel = "Book Intro →",
-}) {
+function Collab({ site, body, bodyKey, ctaLabel = "Book Intro →" }) {
+  const label = site?.collabLabel || "Collaboration";
+  const line1 = site?.collabTitleLine1 || "Ready to drive revenue?";
+  const line2 = site?.collabTitleLine2 || "Book an intro.";
   return (
     <section className="collab case-collab" data-section="cta">
       <div className="wrap collab-inner">
         <div>
-          <p className="label">{label}</p>
+          <p className="label" data-cms-key="site::collabLabel">{label}</p>
           <h2>
-            {title || (
-              <>
-                Ready to drive revenue?
-                <br />
-                Book an intro.
-              </>
-            )}
+            <span data-cms-key="site::collabTitleLine1">{line1}</span>
+            <br />
+            <span data-cms-key="site::collabTitleLine2">{line2}</span>
           </h2>
           {body ? (
             <>
@@ -117,24 +110,22 @@ export default function InnerPage({ data, site, slug }) {
                   <a href={`tel:${String(phone).replace(/\D/g, "")}`} className="btn btn-red">
                     Call {phone} →
                   </a>
-                  <Link href="/book-intro" className="btn btn-red">
-                    Start for Free in June →
+                  <Link href="/book-intro" className="btn btn-red" data-cms-key={k("ctaPrimaryLabel")}>
+                    {data.ctaPrimaryLabel || "Start for Free in June →"}
                   </Link>
                 </div>
-                <p className="promo-fine">
-                  Start for free in June with a signed 3 month contract starting
-                  July 1, 2026.
-                </p>
-                <p className="promo-fine">
-                  *FIRST TIME ADVERTISER SPECIAL* Get up to $3500 in free ads on
-                  Google and Microsoft.
-                </p>
+                {(data.bullets || []).slice(0, 2).map((line, i) => (
+                  <p key={i} className="promo-fine" data-cms-key={k(`bullets.${i}`)}>
+                    {line}
+                  </p>
+                ))}
               </div>
               <div className="promo-hero-media">
                 <img
-                  src="https://alchemypaidmedia.com/wp-content/uploads/2025/04/background-600x337.png"
+                  src={data.heroImage1 || "https://alchemypaidmedia.com/wp-content/uploads/2025/04/background-600x337.png"}
                   alt=""
                   referrerPolicy="no-referrer"
+                  data-cms-key={k("heroImage1")}
                   onError={(e) => {
                     if (e.currentTarget.dataset.fb) return;
                     e.currentTarget.dataset.fb = "1";
@@ -142,9 +133,10 @@ export default function InnerPage({ data, site, slug }) {
                   }}
                 />
                 <img
-                  src="https://alchemypaidmedia.com/wp-content/uploads/2025/03/Screenshot-2025-03-30-at-5.12.08%E2%80%AFPM-600x376.png"
+                  src={data.heroImage2 || "https://alchemypaidmedia.com/wp-content/uploads/2025/03/Screenshot-2025-03-30-at-5.12.08%E2%80%AFPM-600x376.png"}
                   alt=""
                   referrerPolicy="no-referrer"
+                  data-cms-key={k("heroImage2")}
                   onError={(e) => {
                     if (e.currentTarget.dataset.fb) return;
                     e.currentTarget.dataset.fb = "1";
@@ -159,78 +151,81 @@ export default function InnerPage({ data, site, slug }) {
             <div className="wrap promo-partner-row" data-section="partners">
               <div className="promo-partner-card">
                 <img
-                  src="/images/meta-partner.png.webp"
+                  src={data.partnerMetaImage || "/images/meta-partner.png.webp"}
                   alt="Meta Business Partner"
+                  data-cms-key={k("partnerMetaImage")}
                 />
               </div>
               <div className="promo-partner-google">
                 <img
-                  src="/images/googleadwordscertified-white-300x169.png"
+                  src={data.partnerGoogleImage || "/images/googleadwordscertified-white-300x169.png"}
                   alt="Google Partner"
+                  data-cms-key={k("partnerGoogleImage")}
                 />
               </div>
               <div className="promo-partner-ac">
                 <img
-                  src="/images/active-campaign-partner-white.png"
+                  src={data.partnerAcImage || "/images/active-campaign-partner-white.png"}
                   alt="ActiveCampaign Partner"
+                  data-cms-key={k("partnerAcImage")}
                 />
               </div>
             </div>
 
             <div className="wrap promo-split promo-split-mid" data-section="book-intro-cta">
               <div className="promo-split-copy">
-                <p className="promo-kicker">
-                  emarketing experts performance marketing agency
+                <p className="promo-kicker" data-cms-key={k("bookIntroKicker")}>
+                  {data.bookIntroKicker}
                 </p>
                 <h2 className="promo-h2">
-                  Ready to drive revenue?
+                  <span data-cms-key={k("bookIntroTitleLine1")}>{data.bookIntroTitleLine1}</span>
                   <br />
-                  Book an intro.
+                  <span data-cms-key={k("bookIntroTitleLine2")}>{data.bookIntroTitleLine2}</span>
                 </h2>
               </div>
               <PromoCtas primary={`Call ${phone} →`} />
             </div>
 
             <div className="wrap promo-band-copy" data-section="google-microsoft">
-              <p className="promo-kicker promo-kicker-lead">
-                Our agency has experience spending millions on google and
-                microsoft ads.
+              <p className="promo-kicker promo-kicker-lead" data-cms-key={k("googleMicrosoftKicker")}>
+                {data.googleMicrosoftKicker}
               </p>
               <div className="promo-split promo-split-end">
-                <h2 className="promo-h-xl">
-                  Drive more leads, customers + revenue to your business.
+                <h2 className="promo-h-xl" data-cms-key={k("googleMicrosoftTitle")}>
+                  {data.googleMicrosoftTitle}
                 </h2>
                 <PromoCtas primary={`Call the agency owner: ${phone} →`} />
               </div>
             </div>
 
             <div className="wrap promo-shot-stack" data-section="ads-shots">
-              <img className="promo-shot" src="/images/Google-Ads.jpg" alt="" />
-              <img className="promo-shot" src="/images/microsoft-ads.jpg" alt="" />
+              <img className="promo-shot" src={data.adsShot1 || "/images/Google-Ads.jpg"} alt="" data-cms-key={k("adsShot1")} />
+              <img className="promo-shot" src={data.adsShot2 || "/images/microsoft-ads.jpg"} alt="" data-cms-key={k("adsShot2")} />
             </div>
 
             <div className="wrap promo-band-copy" data-section="social">
-              <p className="promo-kicker promo-kicker-lead">
-                Help your business be seen by more customers online.
+              <p className="promo-kicker promo-kicker-lead" data-cms-key={k("socialKicker")}>
+                {data.socialKicker}
               </p>
               <div className="promo-split promo-split-end">
-                <h2 className="promo-h-xl">
-                  Our agency has experience spending millions on social media.
+                <h2 className="promo-h-xl" data-cms-key={k("socialTitle")}>
+                  {data.socialTitle}
                 </h2>
                 <PromoCtas primary={`Call Now ${phone} →`} />
               </div>
             </div>
 
             <div className="wrap promo-shot-stack">
-              <img className="promo-shot" src="/images/meta-ads.jpg" alt="" />
+              <img className="promo-shot" src={data.socialShotImage || "/images/meta-ads.jpg"} alt="" data-cms-key={k("socialShotImage")} />
             </div>
 
             <div className="wrap promo-band-copy" data-section="calls">
-              <p className="promo-kicker promo-kicker-lead">We focus on real results.</p>
+              <p className="promo-kicker promo-kicker-lead" data-cms-key={k("callsKicker")}>
+                {data.callsKicker}
+              </p>
               <div className="promo-split promo-split-end">
-                <h2 className="promo-h-xl">
-                  Our agency has driven in thousands of qualified new customer
-                  calls.
+                <h2 className="promo-h-xl" data-cms-key={k("callsTitle")}>
+                  {data.callsTitle}
                 </h2>
                 <PromoCtas primary={`Call Now ${phone} →`} />
               </div>
@@ -239,9 +234,10 @@ export default function InnerPage({ data, site, slug }) {
             <div className="wrap promo-shot-stack">
               <img
                 className="promo-shot promo-shot-calllog"
-                src="https://alchemypaidmedia.com/wp-content/uploads/2025/04/Screenshot-2025-04-01-at-11.26.10%E2%80%AFPM.png"
+                src={data.callLogImage || "https://alchemypaidmedia.com/wp-content/uploads/2025/04/Screenshot-2025-04-01-at-11.26.10%E2%80%AFPM.png"}
                 alt="Call log — 3,622 calls"
                 referrerPolicy="no-referrer"
+                data-cms-key={k("callLogImage")}
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src =
@@ -251,15 +247,17 @@ export default function InnerPage({ data, site, slug }) {
             </div>
 
             <div className="wrap promo-band-copy" data-section="clients-videos">
-              <p className="promo-kicker promo-kicker-lead">Proof.</p>
+              <p className="promo-kicker promo-kicker-lead" data-cms-key={k("proofKicker")}>
+                {data.proofKicker}
+              </p>
               <div className="promo-split promo-split-end">
-                <h2 className="promo-h-xl">Hear from real Clients.</h2>
+                <h2 className="promo-h-xl" data-cms-key={k("proofTitle")}>{data.proofTitle}</h2>
                 <PromoCtas primary={`Call now ${phone} →`} />
               </div>
             </div>
 
             <div className="wrap promo-video-stack">
-              {videos.map((id) => (
+              {videos.map((id, i) => (
                 <div key={id} className="promo-video">
                   <iframe
                     src={`https://www.youtube.com/embed/${id}`}
@@ -273,11 +271,8 @@ export default function InnerPage({ data, site, slug }) {
             </div>
 
             <div className="wrap promo-band-copy" data-section="humble-brag">
-              <p className="promo-kicker">Humble Brag.</p>
-              <h2 className="promo-h-xl">
-                Case Study: We drove in 500,000 attendees in 10 weeks to the
-                fair.
-              </h2>
+              <p className="promo-kicker" data-cms-key={k("humbleBragKicker")}>{data.humbleBragKicker}</p>
+              <h2 className="promo-h-xl" data-cms-key={k("humbleBragTitle")}>{data.humbleBragTitle}</h2>
               <div className="promo-split" style={{ marginTop: "3vh" }}>
                 <div />
                 <PromoCtas primary={`Call the agency owner: ${phone} →`} />
@@ -297,17 +292,18 @@ export default function InnerPage({ data, site, slug }) {
                 href="/500000-attendees-to-the-fair-in-10-weekends"
                 className="btn btn-red"
                 style={{ marginTop: "2rem", display: "inline-flex" }}
+                data-cms-key={k("readCaseStudyLabel")}
               >
-                Read Case Study →
+                {data.readCaseStudyLabel || "Read Case Study →"}
               </Link>
             </div>
 
             <div className="wrap promo-clients-block" data-section="clients">
-              <p className="promo-kicker">experience on over 100 brands</p>
-              <h2 className="promo-h2">Our Clients</h2>
+              <p className="promo-kicker" data-cms-key={k("clientsKicker")}>{data.clientsKicker}</p>
+              <h2 className="promo-h2" data-cms-key={k("clientsTitle")}>{data.clientsTitle}</h2>
               <div className="promo-client-grid">
-                {clients.map((src) => (
-                  <img key={src} src={src} alt="" />
+                {clients.map((src, i) => (
+                  <img key={src} src={src} alt="" data-cms-key={k(`clients.${i}`)} />
                 ))}
               </div>
             </div>
@@ -315,9 +311,8 @@ export default function InnerPage({ data, site, slug }) {
 
           <section className="promo-finale-white" data-section="finale-cta">
             <div className="wrap">
-              <h2 className="promo-finale-title">
-                We can help generate revenue for your business. Call {phone} and
-                get started for free in June.
+              <h2 className="promo-finale-title" data-cms-key={k("finaleTitle")}>
+                {(data.finaleTitle || "We can help generate revenue for your business. Call {phone} and get started for free in June.").replace("{phone}", phone)}
               </h2>
               <div className="promo-calendly">
                 <iframe
@@ -462,7 +457,9 @@ export default function InnerPage({ data, site, slug }) {
 
           <section className="case-strategy" data-section="strategy">
             <div className="wrap">
-              <p className="case-strategy-label">Strategy</p>
+              <p className="case-strategy-label" data-cms-key="site::strategyLabel">
+                {site?.strategyLabel || "Strategy"}
+              </p>
               <h2 className="exp-title-md case-strategy-title" data-cms-key={k("strategy")}>
                 {data.strategy}
               </h2>
@@ -510,14 +507,14 @@ export default function InnerPage({ data, site, slug }) {
           {data.partners ? (
             <section className="case-partners" data-section="partners">
               <div className="wrap case-partner-grid">
-                {data.partners.map((src) => (
-                  <img key={src} src={src} alt="" />
+                {data.partners.map((src, i) => (
+                  <img key={src} src={src} alt="" data-cms-key={k(`partners.${i}`)} />
                 ))}
               </div>
             </section>
           ) : null}
 
-          <Collab body={data.collabBody} bodyKey={k("collabBody")} ctaLabel={ctaLabel} />
+          <Collab site={site} body={data.collabBody} bodyKey={k("collabBody")} ctaLabel={ctaLabel} />
         </main>
         <Footer />
       </div>
@@ -556,7 +553,7 @@ export default function InnerPage({ data, site, slug }) {
             ))}
           </div>
         </section>
-        <Collab ctaLabel={ctaLabel} />
+        <Collab site={site} ctaLabel={ctaLabel} />
       </main>
       <Footer />
     </div>

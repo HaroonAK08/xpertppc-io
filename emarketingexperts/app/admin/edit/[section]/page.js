@@ -283,12 +283,16 @@ function EditSectionPage() {
   useEffect(() => {
     if (!sectionId) return;
     setError("");
-    skipNextAutoSave.current = true;
     urlFocusHandled.current = false;
     fetch(`/api/admin/content?section=${encodeURIComponent(sectionId)}`)
       .then(async (res) => {
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || "Failed to load");
+        // Re-armed right before every load-triggered setData (not just once
+        // before the fetch starts) so a duplicate effect invocation — e.g.
+        // React StrictMode's dev-mode double-invoke — can't let a second,
+        // redundant data-set slip past the guard and fire a phantom autosave.
+        skipNextAutoSave.current = true;
         setMeta(json.meta);
         setData(json.data);
       })

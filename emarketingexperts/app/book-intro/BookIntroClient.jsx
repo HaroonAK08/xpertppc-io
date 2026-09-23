@@ -62,11 +62,13 @@ export default function BookIntroClient({ data, site }) {
           id="book-form"
         >
           <div className="book-form-panel">
-            <p className="exp-sub">Book A Meeting</p>
+            <p className="exp-sub" data-cms-key="site::bookMeetingLabel">{site?.bookMeetingLabel || "Book A Meeting"}</p>
             <h2 className="book-form-heading" data-cms-key={k("formHeading")}>{data.formHeading}</h2>
             {sent ? (
               <div className="book-thanks">
-                <h3>Thanks — we&apos;ll be in touch shortly.</h3>
+                <h3 data-cms-key="site::bookThanksMessage">
+                  {site?.bookThanksMessage || "Thanks — we'll be in touch shortly."}
+                </h3>
               </div>
             ) : (
               <form
@@ -114,18 +116,22 @@ export default function BookIntroClient({ data, site }) {
             )}
             <p className="book-form-note">
               Or email{" "}
-              <a href="mailto:hello@emarketingexperts.com">
-                hello@emarketingexperts.com
+              <a href={`mailto:${site?.email || "hello@emarketingexperts.com"}`} data-cms-key="site::email">
+                {site?.email || "hello@emarketingexperts.com"}
               </a>
             </p>
           </div>
 
           <aside className="book-aside">
-            <p className="exp-sub">Testimonials</p>
+            <p className="exp-sub" data-cms-key="site::testimonialsLabel">{site?.testimonialsLabel || "Testimonials"}</p>
             <h2 className="exp-title-md">
-              What our clients
+              <span data-cms-key="site::bookTestimonialsTitle1">
+                {site?.bookTestimonialsTitle1 || "What our clients"}
+              </span>
               <br />
-              say about us.
+              <span data-cms-key="site::bookTestimonialsTitle2">
+                {site?.bookTestimonialsTitle2 || "say about us."}
+              </span>
             </h2>
             <div className="book-video-stack">
               {testimonials.map((v) => (

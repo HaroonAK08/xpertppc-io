@@ -281,7 +281,7 @@ export default function ExpertisePage({ data, site, slug }) {
           {showStats ? (
           <div className="wrap exp-stats-row" data-section="statistics">
             <div className="exp-anim">
-              <p className="exp-sub">Statistics</p>
+              <p className="exp-sub" data-cms-key="site::statsLabel">{site?.statsLabel || "Statistics"}</p>
               <h2 className="exp-title-md" data-cms-key={k("stats")}>{data.stats}</h2>
             </div>
             <div className="exp-call-log exp-anim">
@@ -341,7 +341,7 @@ export default function ExpertisePage({ data, site, slug }) {
         {/* Finale — Elementor 7d6e3b69 */}
         <section className="exp-finale" data-section="finale">
           <div className="wrap exp-finale-top exp-anim">
-            <p className="exp-sub">The bottom line.</p>
+            <p className="exp-sub" data-cms-key="site::bottomLineLabel">{site?.bottomLineLabel || "The bottom line."}</p>
             <h2 className="exp-title-md" data-cms-key={k("bottom")}>{data.bottom}</h2>
           </div>
 
@@ -353,7 +353,7 @@ export default function ExpertisePage({ data, site, slug }) {
               aria-label=""
             />
             <aside className="exp-finale-panel exp-anim">
-              <h3>Run your best business.</h3>
+              <h3 data-cms-key="site::runBusinessTitle">{site?.runBusinessTitle || "Run your best business."}</h3>
               <div className="exp-acc">
                 {data.runBusiness.map((item, idx) => {
                   const active = open === idx;
@@ -402,7 +402,7 @@ export default function ExpertisePage({ data, site, slug }) {
         <section className="collab exp-collab" data-section="cta">
           <div className="collab-inner exp-anim">
             <div>
-              <p className="label">Be brave, say hi.</p>
+              <p className="label" data-cms-key="site::braveLabel">{site?.braveLabel || "Be brave, say hi."}</p>
               <h2 data-cms-key={k("ctaTitle")}>{ctaTitle}</h2>
             </div>
             <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
