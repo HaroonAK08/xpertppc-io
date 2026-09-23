@@ -7,16 +7,38 @@ import { nav as defaultNav } from "@/data/site";
 
 function buildPrimaryNav(nav) {
   return [
-    { href: "/", label: "Home Sweet Home", num: "01" },
-    { href: "#", label: "Expertise", num: "02", children: nav.expertise },
-    { href: "#", label: "Capabilities", num: "03", children: nav.capabilities },
+    { href: "/", label: nav.homeLabel, num: "01", cmsKey: "nav::homeLabel" },
+    {
+      href: "#",
+      label: nav.expertiseLabel,
+      num: "02",
+      cmsKey: "nav::expertiseLabel",
+      children: nav.expertise,
+      childKeyPrefix: "expertise",
+    },
+    {
+      href: "#",
+      label: nav.capabilitiesLabel,
+      num: "03",
+      cmsKey: "nav::capabilitiesLabel",
+      children: nav.capabilities,
+      childKeyPrefix: "capabilities",
+    },
     {
       href: "/marketing-agency-in-orange-county",
-      label: "Start for Free",
+      label: nav.startFreeLabel,
       num: "04",
+      cmsKey: "nav::startFreeLabel",
     },
-    { href: "#", label: "Case Studies", num: "05", children: nav.cases },
-    { href: "/book-intro", label: "Book Intro", num: "06" },
+    {
+      href: "#",
+      label: nav.casesLabel,
+      num: "05",
+      cmsKey: "nav::casesLabel",
+      children: nav.cases,
+      childKeyPrefix: "cases",
+    },
+    { href: "/book-intro", label: nav.bookIntroLabel, num: "06", cmsKey: "nav::bookIntroLabel" },
   ];
 }
 
@@ -128,13 +150,18 @@ export default function Header() {
                     type="button"
                     className={isActive(item) ? "active" : undefined}
                     aria-haspopup="true"
+                    data-cms-key={item.cmsKey}
                   >
                     {item.label}
                   </button>
                   <div className="drop">
                     <div className="drop-inner">
-                      {item.children.map((child) => (
-                        <Link key={child.href} href={child.href}>
+                      {item.children.map((child, i) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          data-cms-key={`nav::${item.childKeyPrefix}.${i}.label`}
+                        >
                           {child.label}
                         </Link>
                       ))}
@@ -146,6 +173,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`nav-item ${isActive(item) ? "active" : ""}`}
+                  data-cms-key={item.cmsKey}
                 >
                   <span className="num">{item.num}</span>
                   <span>{item.label}</span>
@@ -167,11 +195,12 @@ export default function Header() {
         <div className={`wrap mobile-nav ${open ? "open" : ""}`}>
           {primaryNav.map((item) =>
             item.children ? (
-              item.children.map((child) => (
+              item.children.map((child, i) => (
                 <Link
                   key={child.href}
                   href={child.href}
                   onClick={() => setOpen(false)}
+                  data-cms-key={`nav::${item.childKeyPrefix}.${i}.label`}
                 >
                   {child.label}
                 </Link>
@@ -181,6 +210,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                data-cms-key={item.cmsKey}
               >
                 {item.num} {item.label}
               </Link>

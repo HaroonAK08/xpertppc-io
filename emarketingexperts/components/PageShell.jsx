@@ -8,16 +8,18 @@ export default function PageShell({
   lead,
   children,
   cta = true,
+  cmsPrefix,
 }) {
+  const k = (path) => (cmsPrefix ? `${cmsPrefix}::${path}` : undefined);
   return (
     <div className="page-shell">
       <Header />
       <main>
         <section className="page-hero">
           <div className="wrap">
-            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-            <h1>{title}</h1>
-            {lead ? <p>{lead}</p> : null}
+            {eyebrow ? <p className="eyebrow" data-cms-key={k("eyebrow")}>{eyebrow}</p> : null}
+            <h1 data-cms-key={k("title")}>{title}</h1>
+            {lead ? <p data-cms-key={k("lead")}>{lead}</p> : null}
           </div>
         </section>
         <section className="section">

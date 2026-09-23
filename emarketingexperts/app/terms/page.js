@@ -13,9 +13,15 @@ export async function generateMetadata() {
 export default async function Page() {
   const data = await getPageContent(SLUG);
   return (
-    <PageShell eyebrow={data?.eyebrow} title={data?.title} lead={data?.lead} cta={false}>
+    <PageShell
+      eyebrow={data?.eyebrow}
+      title={data?.title}
+      lead={data?.lead}
+      cta={false}
+      cmsPrefix="terms"
+    >
       <div className="stat-card">
-        <p>{data?.body}</p>
+        <p data-cms-key="terms::body">{data?.body}</p>
       </div>
     </PageShell>
   );

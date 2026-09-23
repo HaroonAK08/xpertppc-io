@@ -55,6 +55,65 @@ function defaultHome() {
     servicesKicker: "Services",
     servicesTitle:
       "We're a team of digital alchemists who are excited about turning paid media into revenue.",
+    servicesLeft: [
+      {
+        label: "Paid Media",
+        title: "Performance, Awareness, CRO",
+        body: "Acquire more customers. Be found everywhere. Increase your conversions.",
+      },
+      {
+        label: "Production",
+        title: "Strategic Brand Films",
+        body: "Our in-house agency film team shoots strategic brand films to lower CPA and increase ROAS.",
+      },
+    ],
+    servicesRight: [
+      {
+        label: "Brand Development",
+        title: "Website Development, Branding, Positioning",
+        body: "Get a conversion-optimized website. Award-winning design.",
+      },
+      {
+        label: "SEO",
+        title: "Earned and Owned",
+        body: "Dominate the search engines locally with backlink juice and reviews to get 5 Mile Famous.",
+      },
+    ],
+    capabilitiesKicker: "Capabilities",
+    capabilitiesTitle:
+      "Multiplying ad dollars into business revenue. Part science, part magic, all real.",
+    capPhotoImage: "/images/oh__demo1__1.jpeg",
+    capPanelTitle: "We drive revenue with data-driven decisions.",
+    accordionItems: [
+      {
+        title: "Qualified Lead Conversion Tracking",
+        body: "Value-based conversions in GA4, GTM, and CallRail are our elixir of sustainable, scalable success.",
+      },
+      {
+        title: "Transparent KPI Reports",
+        body: "Along with daily pulse checks on all paid media accounts, we provide KPI reports Clientside plus real time reporting dashboards to make optimizations in real time.",
+      },
+      {
+        title: "Real Revenue Analysis",
+        body: "We include real revenue sales reports in all of our data driven decisions, not just surface level clicks and likes.",
+      },
+    ],
+    partners: [
+      "/images/aaa6d172-f2a0-4f56-9310-85b636829ae8.png",
+      "/images/microsoft-advertiser-partner.png",
+      "/images/Partner-AC-logo.png",
+      "/images/58368546-1795-4031-b53c-5fe6030114e2.png",
+      "/images/CR-Agency-Partner-Logo.png",
+      "/images/zapier-partner-logo-1.jpg",
+      "/images/housecall-pro-logo-vector.png",
+      "/images/GTM-LOGO.png",
+      "/images/Toast_logo.svg_.png",
+      "/images/GA4_Logo.jpg",
+      "/images/ServiceTitan_logo.svg_.png",
+      "/images/lead-prosper-logo.png.webp",
+    ],
+    collabTitleLine1: "Ready to drive revenue?",
+    collabTitleLine2: "Book an intro.",
   };
 }
 
@@ -104,6 +163,7 @@ function defaultSite() {
     footerCopyrightSuffix: "Made with passion.",
     footerPrivacyLabel: "Privacy & Cookie Policy",
     footerTermsLabel: "Terms of Service",
+    bookIntroCtaLabel: "Book Intro →",
   };
 }
 

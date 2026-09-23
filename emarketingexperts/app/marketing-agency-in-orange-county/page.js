@@ -15,5 +15,6 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const data = await getPageContent(SLUG);
-  return <InnerPage data={data} />;
+  const site = await getPageContent("site");
+  return <InnerPage data={data} site={site} slug={SLUG} />;
 }

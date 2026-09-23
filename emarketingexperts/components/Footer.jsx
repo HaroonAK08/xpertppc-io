@@ -42,15 +42,20 @@ export default function Footer() {
               href={site.footerInstaUrl}
               target="_blank"
               rel="noreferrer"
+              data-cms-key="site::footerInstaUrl"
             >
               <strong>Insta</strong>
             </a>
           </p>
-          <h3 className="footer-brand">{site.brandName}</h3>
+          <h3 className="footer-brand" data-cms-key="site::brandName">
+            {site.brandName}
+          </h3>
         </div>
         <div className="footer-col">
-          <h3 className="footer-title">{site.footerCity}</h3>
-          <p>
+          <h3 className="footer-title" data-cms-key="site::footerCity">
+            {site.footerCity}
+          </h3>
+          <p data-cms-key="site::footerAddress">
             {lines.map((line, i) => (
               <span key={`${line}-${i}`}>
                 {i === 0 ? <strong>{line}</strong> : line}
@@ -62,10 +67,14 @@ export default function Footer() {
         <div className="footer-col">
           <h3 className="footer-title">Book Intro</h3>
           <p>
-            {site.footerBookBlurb}
+            <span data-cms-key="site::footerBookBlurb">{site.footerBookBlurb}</span>
             <br />
             <strong>
-              <a className="footer-email" href={`mailto:${site.email}`}>
+              <a
+                className="footer-email"
+                href={`mailto:${site.email}`}
+                data-cms-key="site::email"
+              >
                 {site.email}
               </a>
             </strong>
@@ -75,12 +84,18 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="wrap footer-bottom-inner">
           <span>
-            © {new Date().getFullYear()}, {site.footerCopyrightName}. {site.footerCopyrightSuffix}
+            © {new Date().getFullYear()},{" "}
+            <span data-cms-key="site::footerCopyrightName">{site.footerCopyrightName}</span>.{" "}
+            <span data-cms-key="site::footerCopyrightSuffix">{site.footerCopyrightSuffix}</span>
           </span>
           <span>
-            <Link href="/privacy">{site.footerPrivacyLabel}</Link>
+            <Link href="/privacy" data-cms-key="site::footerPrivacyLabel">
+              {site.footerPrivacyLabel}
+            </Link>
             {" | "}
-            <Link href="/terms">{site.footerTermsLabel}</Link>
+            <Link href="/terms" data-cms-key="site::footerTermsLabel">
+              {site.footerTermsLabel}
+            </Link>
           </span>
         </div>
       </div>

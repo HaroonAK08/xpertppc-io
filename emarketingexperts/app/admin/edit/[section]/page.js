@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 
 // Which live page to preview for each section. Sections that aren't a
 // single page (nav, site settings) preview the homepage, since that's
@@ -28,6 +28,9 @@ const IMAGE_KEYS = new Set([
   "poster",
   "waveImage",
   "phoneImage",
+  "partners",
+  "clients",
+  "helpPartners",
 ]);
 
 function isImageKey(key) {
@@ -37,7 +40,7 @@ function isImageKey(key) {
   );
 }
 
-function Field({ label, value, onChange, multiline, media }) {
+function Field({ label, value, onChange, multiline, media, fieldPath }) {
   const upload = async (file) => {
     const fd = new FormData();
     fd.append("file", file);
@@ -48,7 +51,11 @@ function Field({ label, value, onChange, multiline, media }) {
   };
 
   return (
-    <label className="cms-field">
+    <label
+      className="cms-field"
+      id={fieldPath ? `cms-field-${fieldPath}` : undefined}
+      data-field-path={fieldPath || undefined}
+    >
       <span>{label}</span>
       {multiline ? (
         <textarea
@@ -94,46 +101,50 @@ function ObjectEditor({ data, onChange, path = "" }) {
   if (Array.isArray(data)) {
     return (
       <div className="cms-array">
-        {data.map((item, index) => (
-          <div key={`${path}.${index}`} className="cms-array-item">
-            <div className="cms-array-head">
-              <strong>
-                Item {index + 1}
-                {item?.label ? ` — ${item.label}` : ""}
-                {item?.title ? ` — ${item.title}` : ""}
-              </strong>
-              <button
-                type="button"
-                className="cms-link-btn"
-                onClick={() => onChange(data.filter((_, i) => i !== index))}
-              >
-                Remove
-              </button>
+        {data.map((item, index) => {
+          const itemPath = path ? `${path}.${index}` : String(index);
+          return (
+            <div key={itemPath} className="cms-array-item">
+              <div className="cms-array-head">
+                <strong>
+                  Item {index + 1}
+                  {item?.label ? ` — ${item.label}` : ""}
+                  {item?.title ? ` — ${item.title}` : ""}
+                </strong>
+                <button
+                  type="button"
+                  className="cms-link-btn"
+                  onClick={() => onChange(data.filter((_, i) => i !== index))}
+                >
+                  Remove
+                </button>
+              </div>
+              {typeof item === "string" ? (
+                <Field
+                  label="Value"
+                  value={item}
+                  fieldPath={itemPath}
+                  media={isImageKey(path)}
+                  onChange={(v) => {
+                    const next = data.slice();
+                    next[index] = v;
+                    onChange(next);
+                  }}
+                />
+              ) : (
+                <ObjectEditor
+                  data={item}
+                  path={itemPath}
+                  onChange={(v) => {
+                    const next = data.slice();
+                    next[index] = v;
+                    onChange(next);
+                  }}
+                />
+              )}
             </div>
-            {typeof item === "string" ? (
-              <Field
-                label="Value"
-                value={item}
-                media={isImageKey(path)}
-                onChange={(v) => {
-                  const next = data.slice();
-                  next[index] = v;
-                  onChange(next);
-                }}
-              />
-            ) : (
-              <ObjectEditor
-                data={item}
-                path={`${path}.${index}`}
-                onChange={(v) => {
-                  const next = data.slice();
-                  next[index] = v;
-                  onChange(next);
-                }}
-              />
-            )}
-          </div>
-        ))}
+          );
+        })}
         <button
           type="button"
           className="cms-btn cms-btn-ghost"
@@ -163,6 +174,7 @@ function ObjectEditor({ data, onChange, path = "" }) {
       <Field
         label={path || "Value"}
         value={String(data)}
+        fieldPath={path}
         onChange={(v) => onChange(v)}
       />
     );
@@ -172,6 +184,7 @@ function ObjectEditor({ data, onChange, path = "" }) {
     <div className="cms-fields">
       {Object.entries(data).map(([key, value]) => {
         const label = key;
+        const fieldPath = path ? `${path}.${key}` : key;
         if (typeof value === "string" || typeof value === "number") {
           const str = String(value ?? "");
           const multiline = str.length > 90 || str.includes("\n");
@@ -182,13 +195,19 @@ function ObjectEditor({ data, onChange, path = "" }) {
               value={str}
               multiline={multiline}
               media={isImageKey(key)}
+              fieldPath={fieldPath}
               onChange={(v) => onChange({ ...data, [key]: v })}
             />
           );
         }
         if (typeof value === "boolean") {
           return (
-            <label key={key} className="cms-field cms-check">
+            <label
+              key={key}
+              className="cms-field cms-check"
+              id={`cms-field-${fieldPath}`}
+              data-field-path={fieldPath}
+            >
               <input
                 type="checkbox"
                 checked={Boolean(value)}
@@ -206,7 +225,7 @@ function ObjectEditor({ data, onChange, path = "" }) {
               <summary>{label}</summary>
               <ObjectEditor
                 data={value}
-                path={key}
+                path={fieldPath}
                 onChange={(v) => onChange({ ...data, [key]: v })}
               />
             </details>
@@ -218,9 +237,28 @@ function ObjectEditor({ data, onChange, path = "" }) {
   );
 }
 
-export default function EditSectionPage() {
+// Opens every <details> ancestor of a field and scrolls/flashes it, so a
+// click in the live preview lands exactly on the matching form control.
+function focusField(fieldPath) {
+  const el = document.getElementById(`cms-field-${fieldPath}`);
+  if (!el) return false;
+  let p = el.parentElement;
+  while (p) {
+    if (p.tagName === "DETAILS") p.open = true;
+    p = p.parentElement;
+  }
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add("cms-field-flash");
+  const input = el.querySelector("input, textarea");
+  if (input) input.focus({ preventScroll: true });
+  setTimeout(() => el.classList.remove("cms-field-flash"), 1600);
+  return true;
+}
+
+function EditSectionPage() {
   const { section } = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [meta, setMeta] = useState(null);
   const [data, setData] = useState(null);
   const [status, setStatus] = useState("");
@@ -230,6 +268,7 @@ export default function EditSectionPage() {
   const [previewTick, setPreviewTick] = useState(0);
   const skipNextAutoSave = useRef(true);
   const debounceTimer = useRef(null);
+  const urlFocusHandled = useRef(false);
 
   const sectionId = useMemo(
     () => (Array.isArray(section) ? section[0] : section),
@@ -245,6 +284,7 @@ export default function EditSectionPage() {
     if (!sectionId) return;
     setError("");
     skipNextAutoSave.current = true;
+    urlFocusHandled.current = false;
     fetch(`/api/admin/content?section=${encodeURIComponent(sectionId)}`)
       .then(async (res) => {
         const json = await res.json();
@@ -254,6 +294,33 @@ export default function EditSectionPage() {
       })
       .catch((err) => setError(err.message));
   }, [sectionId]);
+
+  // Jumping here from another section's preview click lands with ?focus=<path>.
+  useEffect(() => {
+    if (!data || urlFocusHandled.current) return;
+    const focusKey = searchParams.get("focus");
+    if (!focusKey) return;
+    urlFocusHandled.current = true;
+    const t = setTimeout(() => focusField(focusKey), 200);
+    return () => clearTimeout(t);
+  }, [data, searchParams]);
+
+  // Clicking a labeled element inside the live-preview iframe selects (and
+  // if needed, navigates to) the matching field in the form on the left.
+  useEffect(() => {
+    function handleMessage(event) {
+      if (event.origin !== window.location.origin) return;
+      const msg = event.data;
+      if (!msg || msg.type !== "cms-inspect-select" || !msg.key) return;
+      if (msg.section && msg.section !== sectionId) {
+        router.push(`/admin/edit/${msg.section}?focus=${encodeURIComponent(msg.key)}`);
+        return;
+      }
+      focusField(msg.key);
+    }
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [sectionId, router]);
 
   const persist = async ({ silent } = {}) => {
     if (silent) setAutoSaving(true);
@@ -349,8 +416,9 @@ export default function EditSectionPage() {
           </Link>
           <h1>{meta?.label || sectionId}</h1>
           <p className="cms-muted">
-            Edit fields below. Upload images or paste URLs. Changes appear in
-            the preview automatically a moment after you stop typing.
+            Edit fields below, or click any labeled text/image in the preview
+            to jump straight to it. Changes appear in the preview
+            automatically a moment after you stop typing.
           </p>
         </div>
         <div className="cms-actions">
@@ -393,12 +461,20 @@ export default function EditSectionPage() {
           <div className="cms-preview-frame">
             <iframe
               key={previewTick}
-              src={previewPath}
+              src={`${previewPath}${previewPath.includes("?") ? "&" : "?"}cmsEdit=1`}
               title="Live site preview"
             />
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function EditSectionPageWrapper() {
+  return (
+    <Suspense fallback={<div className="cms-wrap"><p className="cms-muted">Loading editor…</p></div>}>
+      <EditSectionPage />
+    </Suspense>
   );
 }

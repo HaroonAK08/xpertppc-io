@@ -8,6 +8,8 @@ function Collab({
   label = "Collaboration",
   title,
   body = "We’re a team of digital alchemists who are excited about turning paid media into revenue.",
+  bodyKey,
+  ctaLabel = "Book Intro →",
 }) {
   return (
     <section className="collab case-collab" data-section="cta">
@@ -26,12 +28,12 @@ function Collab({
           {body ? (
             <>
               <span className="collab-line" aria-hidden />
-              <p>{body}</p>
+              <p data-cms-key={bodyKey}>{body}</p>
             </>
           ) : null}
         </div>
-        <Link href="/book-intro" className="btn btn-red">
-          Book Intro →
+        <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+          {ctaLabel}
         </Link>
       </div>
     </section>
@@ -77,8 +79,11 @@ const PROMO_VIDEOS = [
 ];
 const PROMO_CASE_VIDEO = "L5cUjx8acmg";
 
-export default function InnerPage({ data }) {
+export default function InnerPage({ data, site, slug }) {
   if (!data) return null;
+
+  const ctaLabel = site?.bookIntroCtaLabel || "Book Intro →";
+  const k = (path) => `${slug}::${path}`;
 
   if (data.type === "promo") {
     const phone = data.phone || "949.322.0387";
@@ -105,9 +110,9 @@ export default function InnerPage({ data }) {
           <section className="promo-hero-white" data-section="hero">
             <div className="wrap promo-hero-grid">
               <div className="promo-hero-copy">
-                <p className="promo-eyebrow">{data.eyebrow}</p>
-                <h1 className="promo-h1">{data.title}</h1>
-                <p className="promo-welcome">{data.lead}</p>
+                <p className="promo-eyebrow" data-cms-key={k("eyebrow")}>{data.eyebrow}</p>
+                <h1 className="promo-h1" data-cms-key={k("title")}>{data.title}</h1>
+                <p className="promo-welcome" data-cms-key={k("lead")}>{data.lead}</p>
                 <div className="promo-cta-stack promo-cta-stack-left">
                   <a href={`tel:${String(phone).replace(/\D/g, "")}`} className="btn btn-red">
                     Call {phone} →
@@ -340,12 +345,12 @@ export default function InnerPage({ data }) {
           <section className="case-hero" data-section="hero">
             <div className="wrap case-hero-grid">
               <div className="case-hero-copy">
-                <p className="exp-sub case-eyebrow">{data.eyebrow}</p>
-                <h1 className="exp-title case-hero-title">
+                <p className="exp-sub case-eyebrow" data-cms-key={k("eyebrow")}>{data.eyebrow}</p>
+                <h1 className="exp-title case-hero-title" data-cms-key={k("title")}>
                   <TitleWithMark title={data.title} mark={data.highlight} />
                 </h1>
-                <Link href="/book-intro" className="btn btn-red">
-                  Book Intro →
+                <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                  {ctaLabel}
                 </Link>
               </div>
               {data.heroImage ? (
@@ -354,6 +359,7 @@ export default function InnerPage({ data }) {
                     src={data.heroImage}
                     alt=""
                     referrerPolicy="no-referrer"
+                    data-cms-key={k("heroImage")}
                     onError={(e) => {
                       const fb = data.heroImageFallback;
                       if (!fb || e.currentTarget.dataset.fb) return;
@@ -369,18 +375,18 @@ export default function InnerPage({ data }) {
           <section className="case-story-row" data-section="story">
             <div className="wrap case-story-grid">
               <div className="case-story-copy">
-                <h2 className="exp-title-md">{data.lead}</h2>
-                <Link href="/book-intro" className="btn btn-red">
-                  Book Intro →
+                <h2 className="exp-title-md" data-cms-key={k("lead")}>{data.lead}</h2>
+                <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                  {ctaLabel}
                 </Link>
               </div>
               {blocks.length ? (
                 <div className="case-grid">
-                  {blocks.map((block) => (
+                  {blocks.map((block, i) => (
                     <article key={block.label} className="case-cell">
-                      <p className="case-cell-label">{block.label}</p>
-                      <h3 className="case-cell-title">{block.title}</h3>
-                      <p className="exp-body">{block.body}</p>
+                      <p className="case-cell-label" data-cms-key={k(`blocks.${i}.label`)}>{block.label}</p>
+                      <h3 className="case-cell-title" data-cms-key={k(`blocks.${i}.title`)}>{block.title}</h3>
+                      <p className="exp-body" data-cms-key={k(`blocks.${i}.body`)}>{block.body}</p>
                     </article>
                   ))}
                 </div>
@@ -395,6 +401,7 @@ export default function InnerPage({ data }) {
                   src={data.coverImage}
                   alt=""
                   referrerPolicy="no-referrer"
+                  data-cms-key={k("coverImage")}
                   onError={(e) => {
                     const fb = data.coverImageFallback;
                     if (!fb || e.currentTarget.dataset.fb) return;
@@ -456,7 +463,9 @@ export default function InnerPage({ data }) {
           <section className="case-strategy" data-section="strategy">
             <div className="wrap">
               <p className="case-strategy-label">Strategy</p>
-              <h2 className="exp-title-md case-strategy-title">{data.strategy}</h2>
+              <h2 className="exp-title-md case-strategy-title" data-cms-key={k("strategy")}>
+                {data.strategy}
+              </h2>
             </div>
             {(data.strategyImage || data.strategyResultTitle) && (
               <div className="wrap case-strategy-overlap">
@@ -466,6 +475,7 @@ export default function InnerPage({ data }) {
                     src={data.strategyImage}
                     alt=""
                     referrerPolicy="no-referrer"
+                    data-cms-key={k("strategyImage")}
                     onError={(e) => {
                       const fb =
                         data.strategyImageFallback ||
@@ -477,16 +487,22 @@ export default function InnerPage({ data }) {
                   />
                 ) : null}
                 <div className="case-result-card">
-                  <h3 className="case-result-title">{data.strategyResultTitle}</h3>
+                  <h3 className="case-result-title" data-cms-key={k("strategyResultTitle")}>
+                    {data.strategyResultTitle}
+                  </h3>
                   {data.strategyResultBody ? (
-                    <p className="exp-body">{data.strategyResultBody}</p>
+                    <p className="exp-body" data-cms-key={k("strategyResultBody")}>
+                      {data.strategyResultBody}
+                    </p>
                   ) : null}
                 </div>
               </div>
             )}
             {!data.strategyResultTitle && data.strategyBody ? (
               <div className="wrap">
-                <p className="exp-body case-strategy-body">{data.strategyBody}</p>
+                <p className="exp-body case-strategy-body" data-cms-key={k("strategyBody")}>
+                  {data.strategyBody}
+                </p>
               </div>
             ) : null}
           </section>
@@ -501,7 +517,7 @@ export default function InnerPage({ data }) {
             </section>
           ) : null}
 
-          <Collab body={data.collabBody} />
+          <Collab body={data.collabBody} bodyKey={k("collabBody")} ctaLabel={ctaLabel} />
         </main>
         <Footer />
       </div>
@@ -515,12 +531,12 @@ export default function InnerPage({ data }) {
         <section className="page-hero">
           <div className="wrap inner-hero">
             <div>
-              <p className="eyebrow">{data.eyebrow}</p>
-              <h1>{data.title}</h1>
-              {data.lead ? <p className="inner-lead">{data.lead}</p> : null}
+              <p className="eyebrow" data-cms-key={k("eyebrow")}>{data.eyebrow}</p>
+              <h1 data-cms-key={k("title")}>{data.title}</h1>
+              {data.lead ? <p className="inner-lead" data-cms-key={k("lead")}>{data.lead}</p> : null}
               <div style={{ marginTop: 24 }}>
-                <Link href="/book-intro" className="btn btn-red">
-                  Book Intro →
+                <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                  {ctaLabel}
                 </Link>
               </div>
             </div>
@@ -529,18 +545,18 @@ export default function InnerPage({ data }) {
 
         <section className="section">
           <div className="wrap points">
-            {data.points.map((point) => (
+            {data.points.map((point, i) => (
               <article key={point.num} className="point">
                 <span className="point-num">{point.num}.</span>
                 <div>
-                  <h3>{point.title}</h3>
-                  <p>{point.body}</p>
+                  <h3 data-cms-key={k(`points.${i}.title`)}>{point.title}</h3>
+                  <p data-cms-key={k(`points.${i}.body`)}>{point.body}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
-        <Collab />
+        <Collab ctaLabel={ctaLabel} />
       </main>
       <Footer />
     </div>

@@ -97,13 +97,21 @@ function useFadeIn() {
   return ref;
 }
 
-function CapCard({ point }) {
+function CapCard({ point, cmsKey }) {
   return (
     <article className="exp-cap-col exp-card exp-anim">
       <p className="exp-sub">{point.num}.</p>
-      <h3 style={{ whiteSpace: "pre-line" }}>{point.title}</h3>
+      <h3
+        style={{ whiteSpace: "pre-line" }}
+        data-cms-key={cmsKey ? `${cmsKey}.title` : undefined}
+      >
+        {point.title}
+      </h3>
       {point.body.map((line, i) => (
-        <p key={line}>
+        <p
+          key={line}
+          data-cms-key={cmsKey ? `${cmsKey}.body.${i}` : undefined}
+        >
           {i === point.body.length - 1 && point.boldLast
             ? boldTail(line, point.boldLast)
             : line}
@@ -113,10 +121,13 @@ function CapCard({ point }) {
   );
 }
 
-export default function ExpertisePage({ data }) {
+export default function ExpertisePage({ data, site, slug }) {
   const [open, setOpen] = useState(0);
   const pageRef = useFadeIn();
   if (!data) return null;
+
+  const ctaLabel = site?.bookIntroCtaLabel || "Book Intro →";
+  const k = (path) => `${slug}::${path}`;
 
   // Prefer page-specific phone; fall back only when asset file is absent locally.
   const phone = data.phoneImage || "/images/1.png";
@@ -157,13 +168,13 @@ export default function ExpertisePage({ data }) {
         <section className="exp-hero" data-section="hero">
           <div className="wrap">
             <div className="exp-hero-inner exp-anim">
-              <p className="exp-sub">{data.eyebrow}</p>
-              <h1 className="exp-title">
+              <p className="exp-sub" data-cms-key={k("eyebrow")}>{data.eyebrow}</p>
+              <h1 className="exp-title" data-cms-key={k("title")}>
                 <TitleWithMark title={data.title} mark={data.highlight} />
               </h1>
               <div className="exp-hero-spacer" aria-hidden />
-              <Link href="/book-intro" className="btn btn-red">
-                Book Intro →
+              <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                {ctaLabel}
               </Link>
             </div>
           </div>
@@ -174,19 +185,19 @@ export default function ExpertisePage({ data }) {
           <div className="wrap">
             <div className="exp-cap-row">
               <div className="exp-cap-col exp-cap-intro exp-anim">
-                <p className="exp-sub">{data.capLabel}</p>
-                <h2 className="exp-title-md">{data.capTitle}</h2>
+                <p className="exp-sub" data-cms-key={k("capLabel")}>{data.capLabel}</p>
+                <h2 className="exp-title-md" data-cms-key={k("capTitle")}>{data.capTitle}</h2>
               </div>
-              {p1 ? <CapCard point={p1} /> : null}
-              {p2 ? <CapCard point={p2} /> : null}
+              {p1 ? <CapCard point={p1} cmsKey={k("points.0")} /> : null}
+              {p2 ? <CapCard point={p2} cmsKey={k("points.1")} /> : null}
             </div>
 
             <div className="exp-cap-row">
               <div className="exp-cap-col exp-cap-tags exp-anim">
                 {tags.length ? (
                   <h2 className="exp-stack">
-                    {tags.map((tag) => (
-                      <span key={tag}>
+                    {tags.map((tag, i) => (
+                      <span key={tag} data-cms-key={k(`tags.${i}`)}>
                         {tag}
                         <br />
                       </span>
@@ -194,8 +205,8 @@ export default function ExpertisePage({ data }) {
                   </h2>
                 ) : null}
               </div>
-              {p3 ? <CapCard point={p3} /> : null}
-              {p4 ? <CapCard point={p4} /> : null}
+              {p3 ? <CapCard point={p3} cmsKey={k("points.2")} /> : null}
+              {p4 ? <CapCard point={p4} cmsKey={k("points.3")} /> : null}
             </div>
           </div>
         </section>
@@ -205,14 +216,22 @@ export default function ExpertisePage({ data }) {
           <section className="exp-cap exp-cap-extra" data-section="capabilities-extra">
             <div className="wrap">
               <div className="exp-cap-extra-head exp-anim">
-                <p className="exp-sub">{extra.label || data.capLabel}</p>
-                <h2 className="exp-title-md">{extra.title}</h2>
+                <p className="exp-sub" data-cms-key={k("extraCapSection.label")}>
+                  {extra.label || data.capLabel}
+                </p>
+                <h2 className="exp-title-md" data-cms-key={k("extraCapSection.title")}>
+                  {extra.title}
+                </h2>
               </div>
               <div
                 className={`exp-cap-extra-grid exp-cap-extra-grid-${Math.min(extra.points.length, 5)}`}
               >
-                {extra.points.map((point) => (
-                  <CapCard key={`${point.num}-${point.title}`} point={point} />
+                {extra.points.map((point, i) => (
+                  <CapCard
+                    key={`${point.num}-${point.title}`}
+                    point={point}
+                    cmsKey={k(`extraCapSection.points.${i}`)}
+                  />
                 ))}
               </div>
             </div>
@@ -235,10 +254,10 @@ export default function ExpertisePage({ data }) {
           {showApproach ? (
           <div className="wrap exp-approach-row" data-section="approach">
             <div className="exp-approach-copy exp-anim">
-              <p className="exp-sub">{data.approach.label}</p>
-              <h2 className="exp-title-md">{data.approach.title}</h2>
+              <p className="exp-sub" data-cms-key={k("approach.label")}>{data.approach.label}</p>
+              <h2 className="exp-title-md" data-cms-key={k("approach.title")}>{data.approach.title}</h2>
               {data.approach.body.map((line, i) => (
-                <p key={line} className="exp-body">
+                <p key={line} className="exp-body" data-cms-key={k(`approach.body.${i}`)}>
                   {i === 0
                     ? boldLead(
                         line,
@@ -249,8 +268,8 @@ export default function ExpertisePage({ data }) {
                     : line}
                 </p>
               ))}
-              <Link href="/book-intro" className="btn btn-red">
-                Book Intro →
+              <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                {ctaLabel}
               </Link>
             </div>
             <div className="exp-approach-media exp-anim">
@@ -263,7 +282,7 @@ export default function ExpertisePage({ data }) {
           <div className="wrap exp-stats-row" data-section="statistics">
             <div className="exp-anim">
               <p className="exp-sub">Statistics</p>
-              <h2 className="exp-title-md">{data.stats}</h2>
+              <h2 className="exp-title-md" data-cms-key={k("stats")}>{data.stats}</h2>
             </div>
             <div className="exp-call-log exp-anim">
               <img src={callLog} alt="Call log chart" />
@@ -278,10 +297,10 @@ export default function ExpertisePage({ data }) {
           {showHelp ? (
           <div className="wrap exp-help-row" data-section="how-we-help">
             <div className="exp-help-left exp-anim">
-              <p className="exp-sub">{data.howWeHelp.label}</p>
+              <p className="exp-sub" data-cms-key={k("howWeHelp.label")}>{data.howWeHelp.label}</p>
               <h2 className="exp-stack">
-                {data.howWeHelp.services.map((s) => (
-                  <span key={s}>
+                {data.howWeHelp.services.map((s, i) => (
+                  <span key={s} data-cms-key={k(`howWeHelp.services.${i}`)}>
                     {s}
                     <br />
                   </span>
@@ -299,8 +318,8 @@ export default function ExpertisePage({ data }) {
             </div>
 
             <div className="exp-help-copy exp-anim">
-              {data.howWeHelp.body.map((line) => (
-                <p key={line} className="exp-body">
+              {data.howWeHelp.body.map((line, i) => (
+                <p key={line} className="exp-body" data-cms-key={k(`howWeHelp.body.${i}`)}>
                   {boldTail(
                     line,
                     data.howWeHelp.boldTail ||
@@ -308,8 +327,8 @@ export default function ExpertisePage({ data }) {
                   )}
                 </p>
               ))}
-              <Link href="/book-intro" className="btn btn-red">
-                Book Intro →
+              <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                {ctaLabel}
               </Link>
             </div>
           </div>
@@ -323,7 +342,7 @@ export default function ExpertisePage({ data }) {
         <section className="exp-finale" data-section="finale">
           <div className="wrap exp-finale-top exp-anim">
             <p className="exp-sub">The bottom line.</p>
-            <h2 className="exp-title-md">{data.bottom}</h2>
+            <h2 className="exp-title-md" data-cms-key={k("bottom")}>{data.bottom}</h2>
           </div>
 
           <div className="exp-finale-split">
@@ -349,13 +368,13 @@ export default function ExpertisePage({ data }) {
                         aria-expanded={active}
                         onClick={() => setOpen(active ? -1 : idx)}
                       >
-                        <span>{item.title}</span>
+                        <span data-cms-key={k(`runBusiness.${idx}.title`)}>{item.title}</span>
                         <span className="exp-acc-icon" aria-hidden>
                           {active ? "—" : "+"}
                         </span>
                       </button>
                       {active ? (
-                        <p className="exp-acc-body">
+                        <p className="exp-acc-body" data-cms-key={k(`runBusiness.${idx}.body`)}>
                           {item.boldMark
                             ? (() => {
                                 const m = item.boldMark;
@@ -384,10 +403,10 @@ export default function ExpertisePage({ data }) {
           <div className="collab-inner exp-anim">
             <div>
               <p className="label">Be brave, say hi.</p>
-              <h2>{ctaTitle}</h2>
+              <h2 data-cms-key={k("ctaTitle")}>{ctaTitle}</h2>
             </div>
-            <Link href="/book-intro" className="btn btn-red">
-              Book Intro →
+            <Link href="/book-intro" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+              {ctaLabel}
             </Link>
           </div>
         </section>

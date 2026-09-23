@@ -1,4 +1,10 @@
 export const nav = {
+  homeLabel: "Home Sweet Home",
+  expertiseLabel: "Expertise",
+  capabilitiesLabel: "Capabilities",
+  startFreeLabel: "Start for Free",
+  casesLabel: "Case Studies",
+  bookIntroLabel: "Book Intro",
   expertise: [
     { href: "/home-services", label: "Home Services" },
     { href: "/medical", label: "Healthcare" },

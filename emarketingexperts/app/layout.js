@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import "./globals.css";
+import CmsInspector from "@/components/CmsInspector";
 
 export const metadata = {
   title: "eMarketing Experts — Drive revenue with paid ads",
@@ -9,7 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
-      <body>{children}</body>
+      <body>
+        <Suspense fallback={null}>
+          <CmsInspector />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

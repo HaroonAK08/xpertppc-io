@@ -10,5 +10,6 @@ export const metadata = {
 
 export default async function BookIntroPage() {
   const data = await getPageContent("book-intro");
-  return <BookIntroClient data={data} />;
+  const site = await getPageContent("site");
+  return <BookIntroClient data={data} site={site} />;
 }

@@ -5,11 +5,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
-export default function BookIntroClient({ data }) {
+export default function BookIntroClient({ data, site }) {
   const [sent, setSent] = useState(false);
   const [playing, setPlaying] = useState(null);
   const testimonials = data.testimonials || [];
   const stats = data.stats || [];
+  const ctaLabel = site?.bookIntroCtaLabel || "Book Intro →";
+  const k = (path) => `book-intro::${path}`;
 
   return (
     <div className="page-shell">
@@ -18,15 +20,15 @@ export default function BookIntroClient({ data }) {
         <section className="book-intro-hero" data-section="hero">
           <div className="wrap book-intro-hero-grid">
             <div className="book-intro-copy">
-              <p className="exp-sub">{data.eyebrow}</p>
+              <p className="exp-sub" data-cms-key={k("eyebrow")}>{data.eyebrow}</p>
               <h1 className="exp-title book-intro-title">
-                {data.title}
+                <span data-cms-key={k("title")}>{data.title}</span>
                 <br />
-                <span className="book-phone-line">{data.phone}</span>
+                <span className="book-phone-line" data-cms-key={k("phone")}>{data.phone}</span>
               </h1>
-              <p className="exp-body book-lead">{data.lead}</p>
-              <Link href="#book-form" className="btn btn-red">
-                Book Intro →
+              <p className="exp-body book-lead" data-cms-key={k("lead")}>{data.lead}</p>
+              <Link href="#book-form" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                {ctaLabel}
               </Link>
             </div>
           </div>
@@ -34,9 +36,9 @@ export default function BookIntroClient({ data }) {
 
         <section className="book-photo-band" data-section="photo">
           <div className="wrap book-photo-frame">
-            <img className="book-photo" src={data.heroImage} alt="" />
+            <img className="book-photo" src={data.heroImage} alt="" data-cms-key={k("heroImage")} />
             <div className="book-stats">
-              {stats.map((stat) => (
+              {stats.map((stat, i) => (
                 <article
                   key={stat.label}
                   className={`book-stat ${
@@ -46,8 +48,8 @@ export default function BookIntroClient({ data }) {
                   <span className="book-stat-icon" aria-hidden>
                     {stat.tone === "dark" ? "✦" : "◆"}
                   </span>
-                  <p className="book-stat-num">{stat.num}</p>
-                  <p className="book-stat-label">{stat.label}</p>
+                  <p className="book-stat-num" data-cms-key={k(`stats.${i}.num`)}>{stat.num}</p>
+                  <p className="book-stat-label" data-cms-key={k(`stats.${i}.label`)}>{stat.label}</p>
                 </article>
               ))}
             </div>
@@ -61,7 +63,7 @@ export default function BookIntroClient({ data }) {
         >
           <div className="book-form-panel">
             <p className="exp-sub">Book A Meeting</p>
-            <h2 className="book-form-heading">{data.formHeading}</h2>
+            <h2 className="book-form-heading" data-cms-key={k("formHeading")}>{data.formHeading}</h2>
             {sent ? (
               <div className="book-thanks">
                 <h3>Thanks — we&apos;ll be in touch shortly.</h3>
@@ -105,8 +107,8 @@ export default function BookIntroClient({ data }) {
                     placeholder="Goals, timeline, current marketing setup…"
                   />
                 </label>
-                <button type="submit" className="btn btn-red">
-                  Book Intro →
+                <button type="submit" className="btn btn-red" data-cms-key="site::bookIntroCtaLabel">
+                  {ctaLabel}
                 </button>
               </form>
             )}
